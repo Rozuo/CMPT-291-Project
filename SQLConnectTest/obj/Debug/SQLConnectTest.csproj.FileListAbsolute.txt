@@ -1,0 +1,7 @@
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\bin\Debug\SQLConnectTest.exe.config
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\bin\Debug\SQLConnectTest.exe
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\bin\Debug\SQLConnectTest.pdb
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\obj\Debug\SQLConnectTest.csprojAssemblyReference.cache
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\obj\Debug\SQLConnectTest.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\obj\Debug\SQLConnectTest.exe
+C:\Users\Alex\Desktop\CMPT Courses\CMPT 291\SQLConnectTest\obj\Debug\SQLConnectTest.pdb
