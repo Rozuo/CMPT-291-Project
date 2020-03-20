@@ -1,0 +1,10 @@
+Branch(BrachID(PK), Location)
+
+Car(VehicleID(PK), Type of Vehicle, Color, Make, Brand, ClientID(FK))
+
+CarType(Daily Price, Weekly Price, Monthly Price)
+
+Client(ClientID(PK), Total Year Rent)
+
+Extra Fee(ReseravtionID(PK), Types of fee, Price)
+Reservation(ReservationID(PK), Start date, End date, Total Price, BranchID(FK), VehicleID(FK), CustomerID(FK))
