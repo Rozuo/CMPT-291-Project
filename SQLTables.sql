@@ -82,6 +82,6 @@ CREATE TABLE [dbo].[Reservation](
 
 GO
 
-ALTER TABLE Car ADD Status BIT;
+ALTER TABLE Car ADD Status BIT NOT NULL;
 
 GO
