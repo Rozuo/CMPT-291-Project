@@ -81,3 +81,7 @@ CREATE TABLE [dbo].[Reservation](
 ) ON [PRIAMRY]
 
 GO
+
+ALTER TABLE Car ADD Status BIT;
+
+GO
