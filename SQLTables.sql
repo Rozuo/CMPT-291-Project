@@ -7,6 +7,26 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+CREATE TABLE [dbo].[CarType](
+	[Daily Price][money] NULL,
+	[Weekly Price][money] NULL,
+	[Monthly Price][money] NULL
+)
+
+
+CREATE TABLE [dbo].[Client](
+	[CustomerID][int] NOT NULL,
+	[Total Year Rent][nchar](50) NULL,
+	[First Name][nchar](50) NOT NULL,
+	[Last Name][nchar](20) NOT NULL,
+	[Address][nchar](100) NOT NULL,
+	[CreditCardNum][int] NULL,
+	[Phone][nvarchar](15) NULL,
+	CONSTRAINT PK_Customer 
+	PRIMARY KEY (CustomerID))
+
+GO
+
 CREATE TABLE [dbo].[Branch](
 	[BranchID][int] NOT NULL,
 	[Location][nvarchar](20) NULL,
@@ -31,26 +51,7 @@ CREATE TABLE [dbo].[Car](
 
 GO
 
-CREATE TABLE [dbo].[CarType](
-	[Daily Price][money] NULL,
-	[Weekly Price][money] NULL,
-	[Monthly Price][money] NULL
-)
 
-
-CREATE TABLE [dbo].[Client](
-	[CustomerID][int] NOT NULL,
-	[Total Year Rent][nchar](50) NULL,
-	[First Name][nchar](50) NOT NULL,
-	[Last Name][nchar](20) NOT NULL,
-	[Address][nchar](100) NOT NULL,
-	[CreditCardNum][int] NULL,
-	[Phone][nvarchar](15) NULL,
-	CONSTRAINT [PK_Client] PRIMARY KEY CLUSTERED
-	([CustomerID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
-) ON [PRIAMRY]
-
-GO
 
 CREATE TABLE [dbo].[ExtraFee](
 	[ReservationID][int] NOT NULL,
