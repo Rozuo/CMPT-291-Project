@@ -36,5 +36,19 @@ namespace Car_Renting_Software
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_291GroupProjectDataSet2.Car' table. You can move, or remove it, as needed.
+            this.carTableAdapter1.Fill(this._291GroupProjectDataSet2.Car);
+            // TODO: This line of code loads data into the '_291GroupProjectDataSet1.Car' table. You can move, or remove it, as needed.
+            this.carTableAdapter.Fill(this._291GroupProjectDataSet1.Car);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
