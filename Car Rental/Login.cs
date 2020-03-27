@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace SQLTest
+namespace CarRental
 {
     public partial class Login : Form
     {
@@ -73,10 +73,12 @@ namespace SQLTest
                         case "Client":
                             {
                                 this.Hide();
-                                // MenuForm mf = new MenuForm();
-                                // mf.Show();
+                              //  MenuForm mf = new MenuForm();
+                            // mf.Show()
                                 MessageBox.Show("This is a Client", "CLIENT");
-                                Application.Exit();
+                                ClientLandingPage CLP = new ClientLandingPage();
+                                CLP.Show();
+                                //Application.Exit();
                                 break;
                             }
 
@@ -173,6 +175,11 @@ namespace SQLTest
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void usrTBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

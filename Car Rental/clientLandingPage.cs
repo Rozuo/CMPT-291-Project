@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace CarRental
 {
-    public partial class Reservation : Form
+    public partial class ClientLandingPage : Form
     {
-        public Reservation()
+        public ClientLandingPage()
         {
             InitializeComponent();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void clientLandingPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

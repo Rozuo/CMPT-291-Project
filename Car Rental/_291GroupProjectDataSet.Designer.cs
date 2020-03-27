@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SQLTest {
+namespace CarRental {
     
     
     /// <summary>
@@ -767,7 +767,7 @@ namespace SQLTest {
         }
     }
 }
-namespace SQLTest._291GroupProjectDataSetTableAdapters {
+namespace CarRental._291GroupProjectDataSetTableAdapters {
     
     
     /// <summary>
@@ -949,7 +949,7 @@ SELECT ClientID, [Total Year Rent], FirstName, LastName, Address, CreditCardNum,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SQLTest.Properties.Settings.Default._291GroupProjectConnectionString;
+            this._connection.ConnectionString = global::CarRental.Properties.Settings.Default._291GroupProjectConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

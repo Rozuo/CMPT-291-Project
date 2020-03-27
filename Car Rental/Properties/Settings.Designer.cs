@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SQLTest.Properties {
+namespace CarRental.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -30,6 +30,17 @@ namespace SQLTest.Properties {
         public string _291GroupProjectConnectionString {
             get {
                 return ((string)(this["_291GroupProjectConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=T" +
+            "rue")]
+        public string _291GroupProjectConnectionString1 {
+            get {
+                return ((string)(this["_291GroupProjectConnectionString1"]));
             }
         }
     }

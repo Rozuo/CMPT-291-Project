@@ -1,4 +1,4 @@
-﻿namespace SQLTest
+﻿namespace CarRental
 {
     partial class Login
     {
@@ -126,6 +126,7 @@
             this.usrTBox.Name = "usrTBox";
             this.usrTBox.Size = new System.Drawing.Size(269, 42);
             this.usrTBox.TabIndex = 5;
+            this.usrTBox.TextChanged += new System.EventHandler(this.usrTBox_TextChanged);
             this.usrTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usrTBox_KeyDown);
             // 
             // label3

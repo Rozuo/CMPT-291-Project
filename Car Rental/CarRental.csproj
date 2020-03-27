@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EB44764E-DA22-433B-B80D-5DE4BC84BE90}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SQLTest</RootNamespace>
-    <AssemblyName>SQLTest</AssemblyName>
+    <RootNamespace>CarRental</RootNamespace>
+    <AssemblyName>CarRental</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,6 +52,12 @@
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientLandingPage.Designer.cs">
+      <DependentUpon>ClientLandingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="LandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +83,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_291GroupProjectDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_291GroupProjectDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_291GroupProjectDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientLandingPage.resx">
+      <DependentUpon>ClientLandingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -91,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="LandingPage.resx">
       <DependentUpon>LandingPage.cs</DependentUpon>
@@ -117,6 +132,17 @@
     </None>
     <None Include="_291GroupProjectDataSet.xss">
       <DependentUpon>_291GroupProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSet1.xsc">
+      <DependentUpon>_291GroupProjectDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_291GroupProjectDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_291GroupProjectDataSet1.xss">
+      <DependentUpon>_291GroupProjectDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

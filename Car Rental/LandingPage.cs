@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SQLTest
+namespace CarRental
 {
     public partial class LandingPage : Form
     {
@@ -45,6 +45,11 @@ namespace SQLTest
         {
             Client clientForm = new Client();
             clientForm.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

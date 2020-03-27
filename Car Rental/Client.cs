@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SQLTest
+namespace CarRental
 {
     public partial class Client : Form
     {
@@ -22,12 +22,7 @@ namespace SQLTest
             this.Hide();
         }
 
-        private void Client_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the '_291GroupProjectDataSet.Client' table. You can move, or remove it, as needed.
-            this.clientTableAdapter.Fill(this._291GroupProjectDataSet.Client);
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -40,6 +35,11 @@ namespace SQLTest
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Client_Load(object sender, EventArgs e)
         {
 
         }
