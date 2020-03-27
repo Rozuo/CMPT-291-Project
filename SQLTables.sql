@@ -13,6 +13,12 @@ CREATE TABLE [dbo].[CarType](
 	[Monthly Price][money] NULL
 )
 
+CREATE TABLE [dbo].[Login](
+	[username][nvarchar](50) NOT NULL,
+	[password][nvarchar](50) NOT NULL,
+	[role][nvarchar] (50) NOT NULL,
+	CONSTRAINT PK_username
+	PRIMARY KEY (username))
 
 CREATE TABLE [dbo].[Client](
 	[CustomerID][uniqueidentifier] NOT NULL,
@@ -20,12 +26,16 @@ CREATE TABLE [dbo].[Client](
 	[First Name][nchar](50) NOT NULL,
 	[Last Name][nchar](20) NOT NULL,
 	[Address][nchar](100) NOT NULL,
-	[CreditCardNum][int] NULL,
+	[CreditCardNum][bigint] NULL,
 	[Phone][nvarchar](15) NULL,
+	[username][nvarchar] (50) NOT NULL,
+	CONSTRAINT FK_username FOREIGN KEY (username)
+	REFERENCES Login(username),
 	CONSTRAINT PK_Customer 
 	PRIMARY KEY (CustomerID))
 
 GO
+
 
 CREATE TABLE [dbo].[Branch](
 	[BranchID][uniqueidentifier] NOT NULL,
