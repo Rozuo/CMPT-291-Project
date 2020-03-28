@@ -9,3 +9,14 @@ C:\Users\Alex\Documents\291CarRental\obj\Debug\291CarRental.exe
 C:\Users\Alex\Documents\291CarRental\obj\Debug\291CarRental.pdb
 C:\Users\Alex\Documents\291CarRental\obj\Debug\_291CarRental.clientLandingPage.resources
 C:\Users\Alex\Documents\291CarRental\obj\Debug\_291CarRental.RegisterClient.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\291CarRental.exe.config
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\291CarRental.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\291CarRental.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.clientLandingPage.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.loginForm.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Properties.Resources.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.RegisterClient.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.GenerateResource.cache
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.pdb

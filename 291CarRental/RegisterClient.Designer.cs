@@ -76,6 +76,8 @@
             this.FirstName.Size = new System.Drawing.Size(301, 51);
             this.FirstName.TabIndex = 1;
             this.FirstName.Text = "First Name";
+            this.FirstName.Enter += new System.EventHandler(this.FirstName_Enter);
+            this.FirstName.Leave += new System.EventHandler(this.FirstName_Leave);
             // 
             // LastName
             // 
@@ -87,6 +89,8 @@
             this.LastName.Size = new System.Drawing.Size(365, 51);
             this.LastName.TabIndex = 2;
             this.LastName.Text = "Last Name";
+            this.LastName.Enter += new System.EventHandler(this.LastName_Enter);
+            this.LastName.Leave += new System.EventHandler(this.LastName_Leave);
             // 
             // Address
             // 
@@ -99,6 +103,8 @@
             this.Address.Size = new System.Drawing.Size(683, 49);
             this.Address.TabIndex = 3;
             this.Address.Text = "Address";
+            this.Address.Enter += new System.EventHandler(this.Address_Enter);
+            this.Address.Leave += new System.EventHandler(this.Address_Leave);
             // 
             // Phone1
             // 
@@ -111,7 +117,8 @@
             this.Phone1.Size = new System.Drawing.Size(98, 49);
             this.Phone1.TabIndex = 4;
             this.Phone1.Text = "780";
-            this.Phone1.TextChanged += new System.EventHandler(this.Phone1_TextChanged);
+            this.Phone1.Enter += new System.EventHandler(this.Phone1_Enter);
+            this.Phone1.Leave += new System.EventHandler(this.Phone1_Leave);
             // 
             // Phone2
             // 
@@ -124,7 +131,8 @@
             this.Phone2.Size = new System.Drawing.Size(113, 49);
             this.Phone2.TabIndex = 5;
             this.Phone2.Text = "???";
-            this.Phone2.TextChanged += new System.EventHandler(this.Phone2_TextChanged);
+            this.Phone2.Enter += new System.EventHandler(this.Phone2_Enter);
+            this.Phone2.Leave += new System.EventHandler(this.Phone2_Leave);
             // 
             // Phone3
             // 
@@ -137,7 +145,8 @@
             this.Phone3.Size = new System.Drawing.Size(119, 49);
             this.Phone3.TabIndex = 6;
             this.Phone3.Text = "????";
-            this.Phone3.TextChanged += new System.EventHandler(this.Phone3_TextChanged);
+            this.Phone3.Enter += new System.EventHandler(this.Phone3_Enter);
+            this.Phone3.Leave += new System.EventHandler(this.Phone3_Leave);
             // 
             // registerButton
             // 
@@ -162,6 +171,8 @@
             this.username.Size = new System.Drawing.Size(683, 49);
             this.username.TabIndex = 8;
             this.username.Text = "username";
+            this.username.Enter += new System.EventHandler(this.username_Enter);
+            this.username.Leave += new System.EventHandler(this.username_Leave);
             // 
             // password
             // 
@@ -173,7 +184,7 @@
             this.password.PasswordChar = '•';
             this.password.Size = new System.Drawing.Size(683, 49);
             this.password.TabIndex = 9;
-            this.password.Text = "something";
+            this.password.Text = "111111";
             // 
             // confirmLabel
             // 
@@ -196,7 +207,7 @@
             this.confirm.PasswordChar = '•';
             this.confirm.Size = new System.Drawing.Size(683, 49);
             this.confirm.TabIndex = 11;
-            this.confirm.Text = "something";
+            this.confirm.Text = "111111";
             // 
             // dash1
             // 
