@@ -35,15 +35,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.LogoLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.exitButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.usrTBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.passTBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.RegisterButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -84,18 +85,32 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.exitButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(170, 326);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(934, 101);
             this.panel2.TabIndex = 2;
             // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(588, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(184, 86);
+            this.exitButton.TabIndex = 9;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 58);
+            this.label2.Location = new System.Drawing.Point(252, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 38);
             this.label2.TabIndex = 4;
@@ -106,7 +121,7 @@
             // 
             this.usrTBox.BackColor = System.Drawing.Color.Gainsboro;
             this.usrTBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.usrTBox.Location = new System.Drawing.Point(417, 58);
+            this.usrTBox.Location = new System.Drawing.Point(417, 69);
             this.usrTBox.Multiline = true;
             this.usrTBox.Name = "usrTBox";
             this.usrTBox.Size = new System.Drawing.Size(269, 42);
@@ -141,27 +156,14 @@
             this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoginButton.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(748, 58);
+            this.LoginButton.Location = new System.Drawing.Point(758, 60);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(175, 45);
+            this.LoginButton.Size = new System.Drawing.Size(175, 69);
             this.LoginButton.TabIndex = 8;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.button1_Click_1);
             this.LoginButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginButton_KeyDown);
-            // 
-            // RegisterButton
-            // 
-            this.RegisterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
-            this.RegisterButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegisterButton.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterButton.Location = new System.Drawing.Point(748, 167);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(175, 45);
-            this.RegisterButton.TabIndex = 10;
-            this.RegisterButton.Text = "Register";
-            this.RegisterButton.UseVisualStyleBackColor = false;
-            this.RegisterButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RegisterButton_KeyDown);
             // 
             // Login
             // 
@@ -169,7 +171,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1104, 427);
-            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.passTBox);
             this.Controls.Add(this.label3);
@@ -179,13 +180,15 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Login";
-            this.Text = "LoginWindow";
+            this.Text = "Login to Car Rental";
             this.Load += new System.EventHandler(this.Form1_Load);
-            // ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
-            //this.panel1.ResumeLayout(false);
+            //((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +207,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox passTBox;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

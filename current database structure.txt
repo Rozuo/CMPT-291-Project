@@ -1,0 +1,10 @@
+Branch(BrachID(PK) [int], Location[nvarchar(20)])
+
+Car(VehicleID(PK)[int], Type of Vehicle[nvarchar(50)], Color[nvarchar(50)], Make[nvarchar(50)], Brand[nvarchar(50)], ClientID(FK))
+
+CarType(Daily Price[money], Weekly Price[money], Monthly Price[money])
+
+Client(ClientID(PK)[int], Total Year Rent[int])
+
+Extra Fee(ReseravtionID(PK)[int], Types of fee[varchar(10)], Price[money])
+Reservation(ReservationID(PK)[int], Start date[datetime], End date[datetime], Total Price[money], BranchID(FK), VehicleID(FK), CustomerID(FK))
