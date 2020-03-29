@@ -82,8 +82,8 @@ GO
 
 CREATE TABLE [dbo].[Reservation](
 	[ReservationID][uniqueidentifier] NOT NULL,
-	[Start date][datetime] NULL,
-	[End date][datetime] NULL,
+	[Start date][smalldatetime] NULL,
+	[End date][smalldatetime] NULL,
 	[Total Price][money] NULL,
 	[BranchID][uniqueidentifier] NOT NULL,
 	[VehicleID][uniqueidentifier] NOT NULL,
