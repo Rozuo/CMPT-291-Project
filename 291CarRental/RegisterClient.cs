@@ -45,20 +45,20 @@ namespace _291CarRental
                 /* 
                  * To account for SQL injection, I'm attempting to use parameter values instead to account for apostrophes
                  */
-                errorFlag = checkAccountInput(errorFlag, account);
+                errorFlag = checkAccountInput(errorFlag, account);  
 
                 account.myCommand.ExecuteNonQuery();
                 MessageBox.Show("Made it past account insert");
 
-
-                string cmd = "Insert into dbo.Client (username, CustomerID, [First Name], [Last Name], [Address], Phone) SELECT user, @Client, @First, @Last, @Address, @Phone WHERE Login.username='Alex')";
+                string cmd = @"Insert into dbo.Client (username, CustomerID, [First Name], [Last Name], [Address], Phone,username) Select username, @Client, @First, @Last, @Address, @Phone, FROM Login WHERE Login.username=@username";  
+                //string cmd = "Insert into dbo.Client (username, CustomerID, [First Name], [Last Name], [Address], Phone) values @Client, @First, @Last, @Address, @Phone)";
                 datab.myCommand.CommandText = cmd;
                 datab.myCommand.Parameters.AddWithValue("Client", ClientID);
                 datab.myCommand.Parameters.AddWithValue("First", FirstName.Text);
                 datab.myCommand.Parameters.AddWithValue("Last", LastName.Text);
                 datab.myCommand.Parameters.AddWithValue("Address", Address.Text);
                 datab.myCommand.Parameters.AddWithValue("Phone", Phone);
-                //datab.myCommand.Parameters.AddWithValue("user", username.Text);
+                datab.myCommand.Parameters.AddWithValue("username", username.Text);
                 //MessageBox.Show(datab.myCommand.CommandText);
                 datab.myCommand.ExecuteNonQuery();
                     
