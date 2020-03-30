@@ -27,53 +27,38 @@ namespace _291CarRental
         private void registerButton_Click(object sender, EventArgs e)
         {
             int errorFlag = 0;
-            Guid ClientID = Guid.NewGuid();
+            Guid UserID = Guid.NewGuid();
             string Phone = Phone1.Text + Phone2.Text + Phone3.Text;
-            database account = datab;
+            //int verifyUsername = 0;
+            database temp = new database(); // remember that objects are pass by reference --> I cannot set temp to datab, otherwise it will overwrite the contents of datab.
             try
             {
-                /*
-                 * Insert into Login table starts here. We need to insert into login table first, as the username is a foreign key in the Client table
-                 */
-                string loginCmd = "Insert into dbo.Login (username, password, role) values (@usern, @pass, @role)";
-                account.myCommand.CommandText = loginCmd;
-                account.myCommand.Parameters.AddWithValue("usern", username.Text);
-                account.myCommand.Parameters.AddWithValue("pass", password.Text);
-                account.myCommand.Parameters.AddWithValue("role", "Client");
-
-
                 /* 
                  * To account for SQL injection, I'm attempting to use parameter values instead to account for apostrophes
                  */
-                errorFlag = checkAccountInput(errorFlag, account);  
 
-                account.myCommand.ExecuteNonQuery();
-                MessageBox.Show("Made it past account insert");
 
-                string cmd = @"Insert into dbo.Client (username, CustomerID, [First Name], [Last Name], [Address], Phone,username) Select username, @Client, @First, @Last, @Address, @Phone, FROM Login WHERE Login.username=@username";  
-                //string cmd = "Insert into dbo.Client (username, CustomerID, [First Name], [Last Name], [Address], Phone) values @Client, @First, @Last, @Address, @Phone)";
+
+                string cmd = "Insert into dbo.Users (UserID, username, password, [First Name], [Last Name], Address, Phone, Gold, role) values (@ID, @user, @pass, @First, @Last, @Add, @Phone, @Gold, @role)";  
+
                 datab.myCommand.CommandText = cmd;
-                datab.myCommand.Parameters.AddWithValue("Client", ClientID);
+                datab.myCommand.Parameters.AddWithValue("ID", UserID);
+                datab.myCommand.Parameters.AddWithValue("user", username.Text.ToUpper());
+                datab.myCommand.Parameters.AddWithValue("pass", password.Text);
                 datab.myCommand.Parameters.AddWithValue("First", FirstName.Text);
                 datab.myCommand.Parameters.AddWithValue("Last", LastName.Text);
-                datab.myCommand.Parameters.AddWithValue("Address", Address.Text);
+                datab.myCommand.Parameters.AddWithValue("Add", Address.Text);
                 datab.myCommand.Parameters.AddWithValue("Phone", Phone);
-                datab.myCommand.Parameters.AddWithValue("username", username.Text);
-                //MessageBox.Show(datab.myCommand.CommandText);
+                datab.myCommand.Parameters.AddWithValue("Gold", 0);                         // could also use 'true' or 'false'
+                datab.myCommand.Parameters.AddWithValue("role", "Client");
+                errorFlag = checkInput(errorFlag, Phone);
+                errorFlag = usernameExists(errorFlag, temp); // 
+                MessageBox.Show(datab.myCommand.CommandText.ToString());
                 datab.myCommand.ExecuteNonQuery();
-                    
- 
-
-                //errorFlag = checkInput(errorFlag);
                 
-     
-                //datab.myCommand.ExecuteNonQuery();
-                //MessageBox.Show(account.myConnection.ToString(), "test") ;
-                //datab.myCommand.ExecuteNonQuery();
-                //MessageBox.Show("inserted into Client", "successful");
-                //account.myCommand.ExecuteNonQuery();
-                //MessageBox.Show("inserted into Login", "successful!");
+
                 MessageBox.Show("You have reigistered!", "FINALIZE");
+                this.Close();
                
 
             }
@@ -84,12 +69,11 @@ namespace _291CarRental
                     MessageBox.Show("ERROR: Something seems to have failed. Please check if your information is correct, or if all information needed is inputted.", "ERROR");
                 if (errorFlag == 2)
                     MessageBox.Show("ERROR: conformation password field and password field do not match", "PASSWORD MATCH ERROR");
-                else if (errorFlag != 0)
-                {
-                    MessageBox.Show("SQL ERROR", "DANGIT");
-                }
+                if (errorFlag == 3)
+                    MessageBox.Show("ERROR: Username already exists. Please try again with a different username");
                 else
-                    MessageBox.Show("ERROR: Username already exists");
+                    MessageBox.Show("An unexpected Error occured:: SQL");
+                
             }
             
 
@@ -116,15 +100,33 @@ namespace _291CarRental
 
         }
 
+        public int usernameExists(int flag, database copy)
+        {
+            /*
+             * Checks whether the username exists within database, and sets flag condition to display the correct error message.
+             */
+            database temp = copy;
+            string userSearch = "SELECT count (*) FROM Users WHERE Users.username=@Username";
+            temp.myCommand.CommandText = userSearch;
+            temp.myCommand.Parameters.AddWithValue("@Username", username.Text.ToUpper());
 
-        public int checkInput(int errorFlag)
+
+            Boolean test = (int)temp.myCommand.ExecuteScalar() > 0;
+            if (test == true)
+            {
+                datab.myCommand.Parameters.AddWithValue("user", DBNull.Value);
+                return flag = 3;
+            }
+            return flag;
+        }
+
+        public int checkInput(int errorFlag, string Phone)
         {
             /*
              * checks for input for Client insertion, whether required fields are missing, otherwise set them as null in order to force it to go to catch
              */
             if (FirstName.Text == "First Name")
             {
-                MessageBox.Show("Went into First name clause");
                 datab.myCommand.Parameters.AddWithValue("First", DBNull.Value);
                 return errorFlag = 1;
             }
@@ -135,32 +137,27 @@ namespace _291CarRental
             }
             if (Address.Text == "Address")
             {
-                datab.myCommand.Parameters.AddWithValue("Address", DBNull.Value);
+                datab.myCommand.Parameters.AddWithValue("Add", DBNull.Value);
                 return errorFlag = 1;
             }
-            return errorFlag = 0;
-        }
-        public int checkAccountInput(int errorFlag, database temp)
-        {
-            /*
-             * checks if account information (username, password) is entered, otherwise makes them null in order to force it to go to catch
-             */
-             if (username.Text == "username")
+            if (username.Text == "username")
             {
-                temp.myCommand.Parameters.AddWithValue("usern", DBNull.Value);
+                datab.myCommand.Parameters.AddWithValue("usern", DBNull.Value);
                 return errorFlag = 1;
             }
-             if (password.Text == "111111" || password.Text == "")
+            if (password.Text == "111111" || password.Text == "")
             {
-                temp.myCommand.Parameters.AddWithValue("pass", DBNull.Value);
+                datab.myCommand.Parameters.AddWithValue("pass", DBNull.Value);
                 return errorFlag = 1;
             }
-             if (password.Text != confirm.Text)
+            if (password.Text != confirm.Text)
             {
-                temp.myCommand.Parameters.AddWithValue("pass", DBNull.Value);
+                datab.myCommand.Parameters.AddWithValue("pass", DBNull.Value);
                 return errorFlag = 2;
             }
-            return errorFlag = 0;
+            if (Phone == "780???????" || Phone.Length != 10)
+                datab.myCommand.Parameters.AddWithValue("Phone", DBNull.Value);     // in case the user doesn't input their phone # correctly, just make it Null
+            return errorFlag;
         }
 
         private void FirstName_Enter(object sender, EventArgs e)

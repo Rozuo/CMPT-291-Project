@@ -45,13 +45,13 @@ namespace _291CarRental
                 /*
                  * The following parameter block denies SQL injection, by splitting the input into parameters, which will account for random apostrophes '
                  */
-                datab.myCommand.CommandText = "Select role from Login Where username=@User " + "and password=@Pass;";
+                datab.myCommand.CommandText = "Select role from Users Where username=@User " + "and password=@Pass;";
                 datab.myCommand.Parameters.AddWithValue("User", username.Text);
                 datab.myCommand.Parameters.AddWithValue("Pass", password.Text);
 
 
                 SqlDataAdapter sda = new SqlDataAdapter(datab.myCommand);
-                //SqlDataAdapter sda = new SqlDataAdapter("Select role from Login Where username='" + username.Text + "' and password='" + password.Text + "'   ", datab.myConnection);
+                //SqlDataAdapter sda = new SqlDataAdapter("Select role from Users Where username='" + username.Text + "' and password='" + password.Text + "'   ", datab.myConnection);
                 DataTable dt = new System.Data.DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 1)
