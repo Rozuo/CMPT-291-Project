@@ -1,7 +1,8 @@
+DELETE FROM Users
 USE [291GroupProject]
 GO
 /*this line is for deleting the rows in table. Type "where" for more conditions*/
-DELETE FROM Users
+
 
 INSERT INTO [dbo].[Branch] VALUES (NEWID(),'Edmonton')
 
@@ -32,19 +33,53 @@ INSERT INTO [dbo].[Users] VALUES (NEWID(),'4','SarahWieldge','SarahW2099','Sarah
 
 INSERT INTO [dbo].[Users] VALUES (NEWID(),'1','LophiliaHam','LophiliaH1043','Lophilia','Ham','220 street 133Ave Vancuouver British Columbia Canada',5510290056760274,'672-919-5446',0, 'client')
 
+INSERT INTO [dbo].[Users] VALUES (NEWID(),'0','SophiaPage','SophiaH557','Sophia','Page','220 street 133Ave Vancuouver British Columbia Canada',5510290026107774,'672-788-5336',0, 'admin')
+
+INSERT INTO [dbo].[Users] VALUES (NEWID(),'5','Tommy','TommyM3901','Tommy','May','104 street 94Ave Edmonton Alberta Canada',5510290021162033,'567-555-2299',1, 'admin')
+
 SELECT * FROM Users
 
-
 /*car table: vehicleID, color, model, make, status, type of vehicle, userID(can be NULL)*/
-SELECT userID from Users as Userid
-/*put 8 cars and 2 with userID*/
-INSERT INTO [dbo].[Car] VALUES (NEWID(),'grey', 'civic', 'Toyota', 'Sedan')
+SELECT userID from Users
 
-INSERT INTO [dbo].[Car] VALUES (NEWID(),'black', 'civic', 'Toyota', 'Sedan')
+SELECT userID from Users where Users.[First Name] = 'Karen'
+INSERT INTO [dbo].[Car] VALUES (NEWID(),'grey', 'civic', 'Honda', 0, 'sedan', NULL)
 
-INSERT INTO [dbo].[Car] VALUES (NEWID(),'blue', 'civic', 'Toyota', 'Sedan')
+INSERT INTO [dbo].[Car] VALUES (NEWID(),'black', 'civic', 'Toyota', 0, 'hatchback', NULL)
+
+INSERT INTO [dbo].[Car] VALUES (NEWID(),'blue', 'civic', 'Toyota', 1, 'sedan',
+(SELECT userID from Users where Users.[First Name] = 'Karen' and Users.[Last Name] = 'Cathey'))
+
+INSERT INTO [dbo].[Car] VALUES (NEWID(),'red', 'civic','Honda', 1,'hatchback',
+(SELECT userID from Users where Users.[First Name] = 'Derik' and Users.[Last Name] = 'Gates'))
+
+INSERT INTO [dbo].[Car] VALUES(NEWID(),'grey', 'mustang', 'Ford', 0, 'coupe', NULL)
+
+INSERT INTO [dbo].[Car] VALUES(NEWID(),'grey', 'mustang', 'Ford', 2, 'coupe', NULL)
+
+INSERT INTO [dbo].[Car] VALUES(NEWID(),'blue', '911', 'Porsche', 2, 'convertible', NULL)
+
+INSERT INTO [dbo].[Car] VALUES(NEWID(),'white', 'Cayenne', 'Porsche', 0, 'suv', NULL)
+
+INSERT INTO [dbo].[Car] VALUES(NEWID(),'blue', 'F-150', 'Ford', 0, 'truck', NULL)
+
+SELECT * FROM Car
 /*carType table: type of vehicle, daily price, weekly price, monthly price*/
+INSERT INTO [dbo].[CarType] VALUES('sedan',230,0.95,0.65)
 
+INSERT INTO [dbo].[CarType] VALUES('hatchback',250,0.95,0.65)
+
+INSERT INTO [dbo].[CarType] VALUES('coupe',510,0.75,0.55)
+
+INSERT INTO [dbo].[CarType] VALUES('convertible',530,0.75,0.55)
+
+INSERT INTO [dbo].[CarType] VALUES('suv',370,0.9,0.7)
+
+INSERT INTO [dbo].[CarType] VALUES('truck',410,0.9,0.7)
+
+INSERT INTO [dbo].[CarType] VALUES('van',390,0.9,0.7)
+
+SELECT * FROM CarType
 /*reservation: reservationID, start date, end date, total price, branchID, vehicleID, userID*/
 
 
