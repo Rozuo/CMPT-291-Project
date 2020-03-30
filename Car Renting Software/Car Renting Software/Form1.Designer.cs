@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.makeBox = new System.Windows.Forms.TextBox();
-            this.nameBox = new System.Windows.Forms.TextBox();
+            this.colorBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.carIDBox = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.filterButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carTableAdapter = new Car_Renting_Software._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
@@ -52,7 +52,7 @@
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this._291GroupProjectDataSet2 = new Car_Renting_Software._291GroupProjectDataSet2();
             this.carTableAdapter1 = new Car_Renting_Software._291GroupProjectDataSet2TableAdapters.CarTableAdapter();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.availableCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -78,15 +78,15 @@
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // confirmButton
             // 
-            this.button1.Location = new System.Drawing.Point(1156, 572);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.confirmButton.Location = new System.Drawing.Point(1156, 572);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(100, 31);
+            this.confirmButton.TabIndex = 2;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // vScrollBar1
             // 
@@ -97,58 +97,57 @@
             // 
             // makeBox
             // 
-            this.makeBox.Location = new System.Drawing.Point(118, 209);
+            this.makeBox.Location = new System.Drawing.Point(12, 209);
             this.makeBox.Name = "makeBox";
             this.makeBox.Size = new System.Drawing.Size(113, 20);
             this.makeBox.TabIndex = 5;
-            this.makeBox.Text = "Make";
+            this.makeBox.TextChanged += new System.EventHandler(this.makeBox_TextChanged);
             // 
-            // nameBox
+            // colorBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(12, 209);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(100, 20);
-            this.nameBox.TabIndex = 7;
-            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
+            this.colorBox.Location = new System.Drawing.Point(343, 210);
+            this.colorBox.Name = "colorBox";
+            this.colorBox.Size = new System.Drawing.Size(100, 20);
+            this.colorBox.TabIndex = 7;
+            this.colorBox.TextChanged += new System.EventHandler(this.colorBox_TextChanged);
             // 
             // textBox5
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(12, 190);
+            this.textBox5.Location = new System.Drawing.Point(343, 191);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 13);
             this.textBox5.TabIndex = 8;
-            this.textBox5.Text = "Name";
+            this.textBox5.Text = "Color";
             // 
             // carIDBox
             // 
-            this.carIDBox.Location = new System.Drawing.Point(491, 210);
+            this.carIDBox.Location = new System.Drawing.Point(449, 210);
             this.carIDBox.Name = "carIDBox";
             this.carIDBox.Size = new System.Drawing.Size(120, 20);
             this.carIDBox.TabIndex = 9;
-            this.carIDBox.Text = "Car ID#";
             this.carIDBox.TextChanged += new System.EventHandler(this.carIDBox_TextChanged);
             // 
             // textBox7
             // 
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(491, 191);
+            this.textBox7.Location = new System.Drawing.Point(449, 191);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(100, 13);
             this.textBox7.TabIndex = 11;
             this.textBox7.Text = "Car ID#";
             // 
-            // button2
+            // filterButton
             // 
-            this.button2.Location = new System.Drawing.Point(716, 207);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Filter";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.filterButton.Location = new System.Drawing.Point(674, 206);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(75, 23);
+            this.filterButton.TabIndex = 12;
+            this.filterButton.Text = "Filter";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // pictureBox1
             // 
@@ -239,20 +238,21 @@
             // 
             this.carTableAdapter1.ClearBeforeFill = true;
             // 
-            // checkBox1
+            // availableCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(617, 213);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(93, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Available Cars";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.availableCheckBox.AutoSize = true;
+            this.availableCheckBox.Location = new System.Drawing.Point(575, 213);
+            this.availableCheckBox.Name = "availableCheckBox";
+            this.availableCheckBox.Size = new System.Drawing.Size(93, 17);
+            this.availableCheckBox.TabIndex = 15;
+            this.availableCheckBox.Text = "Available Cars";
+            this.availableCheckBox.UseVisualStyleBackColor = true;
+            this.availableCheckBox.CheckedChanged += new System.EventHandler(this.availableCheckBox_CheckedChanged);
             // 
             // textBox3
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(118, 191);
+            this.textBox3.Location = new System.Drawing.Point(12, 191);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(113, 13);
@@ -262,7 +262,7 @@
             // textBox8
             // 
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(249, 191);
+            this.textBox8.Location = new System.Drawing.Point(131, 191);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(100, 13);
@@ -272,7 +272,7 @@
             // textBox9
             // 
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Location = new System.Drawing.Point(364, 191);
+            this.textBox9.Location = new System.Drawing.Point(237, 191);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 13);
@@ -281,7 +281,7 @@
             // 
             // typeBox
             // 
-            this.typeBox.Location = new System.Drawing.Point(364, 209);
+            this.typeBox.Location = new System.Drawing.Point(237, 209);
             this.typeBox.Name = "typeBox";
             this.typeBox.Size = new System.Drawing.Size(100, 20);
             this.typeBox.TabIndex = 18;
@@ -289,7 +289,7 @@
             // 
             // modelBox
             // 
-            this.modelBox.Location = new System.Drawing.Point(249, 209);
+            this.modelBox.Location = new System.Drawing.Point(131, 209);
             this.modelBox.Name = "modelBox";
             this.modelBox.Size = new System.Drawing.Size(100, 20);
             this.modelBox.TabIndex = 19;
@@ -304,18 +304,18 @@
             this.Controls.Add(this.typeBox);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.availableCheckBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.filterButton);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.carIDBox);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.nameBox);
+            this.Controls.Add(this.colorBox);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.makeBox);
             this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -333,14 +333,14 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.TextBox makeBox;
-        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.TextBox colorBox;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox carIDBox;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button filterButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource carBindingSource;
         private _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
@@ -355,7 +355,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn makeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox availableCheckBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
