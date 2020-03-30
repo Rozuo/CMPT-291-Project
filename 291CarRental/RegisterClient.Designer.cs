@@ -43,6 +43,7 @@
             this.confirm = new System.Windows.Forms.TextBox();
             this.dash1 = new System.Windows.Forms.Label();
             this.dash2 = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +118,7 @@
             this.Phone1.Size = new System.Drawing.Size(98, 49);
             this.Phone1.TabIndex = 4;
             this.Phone1.Text = "780";
+            this.Phone1.TextChanged += new System.EventHandler(this.Phone1_TextChanged);
             this.Phone1.Enter += new System.EventHandler(this.Phone1_Enter);
             this.Phone1.Leave += new System.EventHandler(this.Phone1_Leave);
             // 
@@ -131,6 +133,7 @@
             this.Phone2.Size = new System.Drawing.Size(113, 49);
             this.Phone2.TabIndex = 5;
             this.Phone2.Text = "???";
+            this.Phone2.TextChanged += new System.EventHandler(this.Phone2_TextChanged);
             this.Phone2.Enter += new System.EventHandler(this.Phone2_Enter);
             this.Phone2.Leave += new System.EventHandler(this.Phone2_Leave);
             // 
@@ -145,6 +148,7 @@
             this.Phone3.Size = new System.Drawing.Size(119, 49);
             this.Phone3.TabIndex = 6;
             this.Phone3.Text = "????";
+            this.Phone3.TextChanged += new System.EventHandler(this.Phone3_TextChanged);
             this.Phone3.Enter += new System.EventHandler(this.Phone3_Enter);
             this.Phone3.Leave += new System.EventHandler(this.Phone3_Leave);
             // 
@@ -185,6 +189,8 @@
             this.password.Size = new System.Drawing.Size(683, 49);
             this.password.TabIndex = 9;
             this.password.Text = "111111";
+            this.password.Enter += new System.EventHandler(this.password_Enter);
+            this.password.Leave += new System.EventHandler(this.password_Leave);
             // 
             // confirmLabel
             // 
@@ -208,6 +214,8 @@
             this.confirm.Size = new System.Drawing.Size(683, 49);
             this.confirm.TabIndex = 11;
             this.confirm.Text = "111111";
+            this.confirm.Enter += new System.EventHandler(this.confirm_Enter);
+            this.confirm.Leave += new System.EventHandler(this.confirm_Leave);
             // 
             // dash1
             // 
@@ -233,12 +241,26 @@
             this.dash2.TabIndex = 13;
             this.dash2.Text = "-";
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Brown;
+            this.ExitButton.Font = new System.Drawing.Font("Century Schoolbook", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExitButton.Location = new System.Drawing.Point(26, 688);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(683, 49);
+            this.ExitButton.TabIndex = 14;
+            this.ExitButton.Text = "CANCEL";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RegisterClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(733, 688);
+            this.ClientSize = new System.Drawing.Size(733, 749);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.dash2);
             this.Controls.Add(this.dash1);
             this.Controls.Add(this.confirm);
@@ -283,5 +305,6 @@
         private System.Windows.Forms.TextBox confirm;
         private System.Windows.Forms.Label dash1;
         private System.Windows.Forms.Label dash2;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

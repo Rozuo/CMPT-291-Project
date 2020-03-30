@@ -29,7 +29,6 @@ namespace _291CarRental
             int errorFlag = 0;
             Guid UserID = Guid.NewGuid();
             string Phone = Phone1.Text + Phone2.Text + Phone3.Text;
-            //int verifyUsername = 0;
             database temp = new database(); // remember that objects are pass by reference --> I cannot set temp to datab, otherwise it will overwrite the contents of datab.
             try
             {
@@ -66,13 +65,25 @@ namespace _291CarRental
             catch
             {
                 if (errorFlag == 1)
+                {
                     MessageBox.Show("ERROR: Something seems to have failed. Please check if your information is correct, or if all information needed is inputted.", "ERROR");
+                    retryForm(this);
+                }
                 if (errorFlag == 2)
+                {
                     MessageBox.Show("ERROR: conformation password field and password field do not match", "PASSWORD MATCH ERROR");
+                    retryForm(this);
+                }
                 if (errorFlag == 3)
+                {
                     MessageBox.Show("ERROR: Username already exists. Please try again with a different username");
+                    retryForm(this);
+                }
                 else
+                {
                     MessageBox.Show("An unexpected Error occured:: SQL");
+                    retryForm(this);
+                }
                 
             }
             
@@ -99,7 +110,26 @@ namespace _291CarRental
         {
 
         }
-
+        public void retryForm(RegisterClient original)
+        {
+            using (RegisterClient retry = new RegisterClient(datab))
+            {
+                retry.FirstName.Text = original.FirstName.Text;
+                retry.FirstName.ForeColor = Color.Black;
+                retry.LastName.Text = original.LastName.Text;
+                retry.LastName.ForeColor = Color.Black;
+                retry.Address.Text = original.Address.Text;
+                retry.Address.ForeColor = Color.Black;
+                retry.Phone1.Text = original.Phone1.Text;
+                retry.Phone1.ForeColor = Color.Black;
+                retry.Phone2.Text = original.Phone2.Text;
+                retry.Phone2.ForeColor = Color.Black;
+                retry.Phone3.Text = original.Phone3.Text;
+                retry.Phone3.ForeColor = Color.Black;
+                original.Close();
+                retry.ShowDialog();
+            }
+        }
         public int usernameExists(int flag, database copy)
         {
             /*
@@ -283,6 +313,47 @@ namespace _291CarRental
             {
                 username.Text = "username";
                 username.ForeColor = Color.Gray;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            if (password.Text == "111111")
+            {
+                password.Text = "";
+                password.ForeColor = Color.Black;
+            }
+        }
+
+        private void password_Leave(object sender, EventArgs e)
+        {
+            if (password.Text == "")
+            {
+                password.Text = "111111";
+                password.ForeColor = Color.Gray;
+            }
+        }
+
+        private void confirm_Enter(object sender, EventArgs e)
+        {
+            if (confirm.Text == "111111")
+            {
+                confirm.Text = "";
+                confirm.ForeColor = Color.Black;
+            }
+        }
+
+        private void confirm_Leave(object sender, EventArgs e)
+        {
+            if (confirm.Text == "")
+            {
+                confirm.Text = "111111";
+                confirm.ForeColor = Color.Gray;
             }
         }
     }
