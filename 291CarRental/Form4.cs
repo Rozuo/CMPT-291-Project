@@ -21,18 +21,21 @@ namespace Car_Renting_Software
         private string cmd;
         private Dictionary<String, String> parameters = new Dictionary<String, String>();
 
+
+        private _291CarRental.database datab = new _291CarRental.database(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
+        /*
         private SqlDataReader dataRead;
         private SqlCommand dataCommand;
         private SqlConnection dataConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
-
+        */
         public Form4()
         {
             InitializeComponent();
+            /*
             dataConnection.Open();
             dataCommand = new SqlCommand();
             dataCommand.Connection = dataConnection;
-            
-            
+            */
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -144,6 +147,27 @@ namespace Car_Renting_Software
             // if the the boxes are filled go through them and add all parameters.
             if(parameters.Count > 0)
             {
+
+                foreach (KeyValuePair<string, string> param in parameters)
+                {
+                    cmd = cmd + param.Key + " = " + param.Value + " and ";
+                    switch (param.Value)
+                    {
+                        case ("@color"):
+                            datab.myCommand.Parameters.AddWithValue("color", color);
+                            break;
+                        case ("@model"):
+                            datab.myCommand.Parameters.AddWithValue("model", model);
+                            break;
+                        case ("@make"):
+                            datab.myCommand.Parameters.AddWithValue("make", make);
+                            break;
+                        case ("@type"):
+                            datab.myCommand.Parameters.AddWithValue("type", type);
+                            break;
+                    }
+                }
+                /*
                 foreach(KeyValuePair<string, string> param in parameters)
                 {
                     cmd = cmd + param.Key + " = " + param.Value + " and ";
@@ -162,9 +186,9 @@ namespace Car_Renting_Software
                             dataCommand.Parameters.AddWithValue("type", type);
                             break;
                     }
-                }
+                }*/
                 //MessageBox.Show("cmd = " + cmd);                    // Debug purposes
-            
+
                 int lastAnd = cmd.LastIndexOf(" and ");       // get last index of the and
             
                 cmd = cmd.Remove(lastAnd);                    // remove last and
@@ -177,22 +201,35 @@ namespace Car_Renting_Software
             }
 
             // run query
-            dataCommand.CommandText = cmd;
+            //dataCommand.CommandText = cmd;
             try
             {
-                dataRead = dataCommand.ExecuteReader();
+                datab.query(cmd);
+                //dataRead = dataCommand.ExecuteReader();
                 CarData.DataSource = null;
                 CarData.Rows.Clear();
-                while (dataRead.Read())
+                while (datab.myReader.Read())
                 {
+                    CarData.Rows.Add(datab.myReader["VehicleID"].ToString(), datab.myReader["Color"].ToString(), datab.myReader["Model"].ToString(),
+                        datab.myReader["Make"].ToString(),
+                        datab.myReader["Status"].ToString(),
+                        datab.myReader["Type of Vehicle"].ToString(),
+                        datab.myReader["UserID"].ToString());
+                }
+                /*while (dataRead.Read())
+                {
+
+                    
                     CarData.Rows.Add(dataRead["VehicleID"].ToString(), dataRead["Color"].ToString(), dataRead["Model"].ToString(),
                         dataRead["Make"].ToString(),
                         dataRead["Status"].ToString(),
                         dataRead["Type of Vehicle"].ToString(),
                         dataRead["UserID"].ToString());
-                }
-                dataRead.Close();
-                dataCommand.Parameters.Clear();
+                        
+                }*/
+                datab.myReader.Close();
+                //dataCommand.Parameters.Clear();
+                datab.clearParameters();
             }
             catch(Exception e3)
             {

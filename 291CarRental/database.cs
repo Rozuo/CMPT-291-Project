@@ -33,19 +33,22 @@ namespace _291CarRental
             /*
              * Change the myConnection line to include whatever data connection string works with your own local database
              */
-            SqlConnection myConnection = new SqlConnection(@"Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True");
+            SqlConnection myConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True");
             myConnection.Open();    // opens the connection
             usr = username;
             myCommand = new SqlCommand();
             myCommand.Connection = myConnection; // Links the command stream and the connection
             this.myConnection = myConnection;
         }
+
+        // AREX CONNECTION STRING: @"Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True"
+        // Roos CONNECTION STRING: @"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True"
         public database()
         {
             /*
              * Method invoked only once, in order to register a new client, as they will not have a username yet
              */
-            SqlConnection myConnection = new SqlConnection(@"Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True");
+            SqlConnection myConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True");
             myConnection.Open();    // opens the connection
             myCommand = new SqlCommand();
             myCommand.Connection = myConnection; // Links the command stream and the connection
@@ -68,5 +71,11 @@ namespace _291CarRental
             MessageBox.Show(myCommand.CommandText);
             myReader = myCommand.ExecuteReader();
         }
+
+        public void clearParameters()
+        {
+            myCommand.Parameters.Clear();
+        }
+
     }
 }
