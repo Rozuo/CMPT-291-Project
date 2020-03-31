@@ -37,18 +37,10 @@ CREATE TABLE [dbo].[Users](
 	[Address][nchar](100) NOT NULL,
 	[CreditCardNum][bigint] NULL,
 	[Phone][nvarchar](15) NULL,
-<<<<<<< HEAD:SQLTablesUnique.sql
-	[username][nvarchar] (50) UNIQUE NOT NULL,
-	CONSTRAINT FK_username FOREIGN KEY (username) 
-	REFERENCES Login(username),
-	CONSTRAINT PK_Customer 
-	PRIMARY KEY (CustomerID))
-=======
 	[Gold][bit] NOT NULL,
 	[role][nvarchar] (50) NOT NULL,
 	CONSTRAINT PK_UserID 
 	PRIMARY KEY (UserID))
->>>>>>> Car:SQLTables.sql
 
 GO
 
