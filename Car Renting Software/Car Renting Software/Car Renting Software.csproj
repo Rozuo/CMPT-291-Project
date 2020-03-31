@@ -74,6 +74,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_291GroupProjectDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_291GroupProjectDataSetCar.cs">
+      <DependentUpon>_291GroupProjectDataSetCar.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_291GroupProjectDataSetCar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
