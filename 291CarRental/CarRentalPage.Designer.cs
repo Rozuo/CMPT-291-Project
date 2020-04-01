@@ -56,6 +56,7 @@
             this.TypeText = new System.Windows.Forms.Label();
             this.ColorText = new System.Windows.Forms.Label();
             this.CarIDText = new System.Windows.Forms.Label();
+            this.CarInfoBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
@@ -177,6 +178,8 @@
             this.CarData.DataSource = this.carBindingSource;
             this.CarData.Location = new System.Drawing.Point(12, 235);
             this.CarData.Name = "CarData";
+            this.CarData.ReadOnly = true;
+            this.CarData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CarData.Size = new System.Drawing.Size(907, 368);
             this.CarData.TabIndex = 20;
             this.CarData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarData_CellContentClick_2);
@@ -186,42 +189,49 @@
             this.vehicleIDDataGridViewTextBoxColumn.DataPropertyName = "VehicleID";
             this.vehicleIDDataGridViewTextBoxColumn.HeaderText = "VehicleID";
             this.vehicleIDDataGridViewTextBoxColumn.Name = "vehicleIDDataGridViewTextBoxColumn";
+            this.vehicleIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // colorDataGridViewTextBoxColumn
             // 
             this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
             this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
             this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // modelDataGridViewTextBoxColumn
             // 
             this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
             this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // makeDataGridViewTextBoxColumn
             // 
             this.makeDataGridViewTextBoxColumn.DataPropertyName = "Make";
             this.makeDataGridViewTextBoxColumn.HeaderText = "Make";
             this.makeDataGridViewTextBoxColumn.Name = "makeDataGridViewTextBoxColumn";
+            this.makeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // typeOfVehicleDataGridViewTextBoxColumn
             // 
             this.typeOfVehicleDataGridViewTextBoxColumn.DataPropertyName = "Type of Vehicle";
             this.typeOfVehicleDataGridViewTextBoxColumn.HeaderText = "Type of Vehicle";
             this.typeOfVehicleDataGridViewTextBoxColumn.Name = "typeOfVehicleDataGridViewTextBoxColumn";
+            this.typeOfVehicleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
             this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
             this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
             this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // carBindingSource
             // 
@@ -288,11 +298,21 @@
             this.CarIDText.TabIndex = 25;
             this.CarIDText.Text = "Car ID#";
             // 
-            // Form1
+            // CarInfoBox
+            // 
+            this.CarInfoBox.Location = new System.Drawing.Point(942, 235);
+            this.CarInfoBox.Name = "CarInfoBox";
+            this.CarInfoBox.ReadOnly = true;
+            this.CarInfoBox.Size = new System.Drawing.Size(314, 331);
+            this.CarInfoBox.TabIndex = 26;
+            this.CarInfoBox.Text = "";
+            // 
+            // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 615);
+            this.Controls.Add(this.CarInfoBox);
             this.Controls.Add(this.CarIDText);
             this.Controls.Add(this.ColorText);
             this.Controls.Add(this.TypeText);
@@ -310,7 +330,7 @@
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
+            this.Name = "Form4";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -351,6 +371,7 @@
         private System.Windows.Forms.Label TypeText;
         private System.Windows.Forms.Label ColorText;
         private System.Windows.Forms.Label CarIDText;
+        private System.Windows.Forms.RichTextBox CarInfoBox;
     }
 }
 

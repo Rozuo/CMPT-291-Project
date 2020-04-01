@@ -18,6 +18,11 @@ namespace Car_Renting_Software
         private string type;
         private string color;
         private string carID;
+        private int    availableCarsOnly = 0;
+
+        private int theSelectedRow;
+        private int amountOfRows;
+
         private string cmd;
         private Dictionary<String, String> parameters = new Dictionary<String, String>();
 
@@ -56,7 +61,17 @@ namespace Car_Renting_Software
         private void carIDBox_TextChanged(object sender, EventArgs e)
         {
             carID = carIDBox.Text;
-            
+            // if the parameter already exists do not add it
+            if (!parameters.ContainsKey("Car.VehicleID"))
+            {
+                parameters.Add("Car.VehicleID", "@carID");
+            }
+            // if the text box is empty get rid of the parameter.
+            if (carIDBox.Text.Equals(""))
+            {
+                parameters.Remove("Car.VehicleID");
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -124,7 +139,14 @@ namespace Car_Renting_Software
 
         private void availableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (availableCheckBox.Checked && !parameters.ContainsKey("Car.Status"))
+            {
+                parameters.Add("Car.Status", "@status");
+            }
+            else
+            {
+                parameters.Remove("Car.Status");
+            }
         }
 
         private void makeBox_TextChanged(object sender, EventArgs e)
@@ -164,6 +186,12 @@ namespace Car_Renting_Software
                             break;
                         case ("@type"):
                             datab.myCommand.Parameters.AddWithValue("type", type);
+                            break;
+                        case ("@carID"):
+                            datab.myCommand.Parameters.AddWithValue("carID", carID);
+                            break;
+                        case ("@status"):
+                            datab.myCommand.Parameters.AddWithValue("status", availableCarsOnly);
                             break;
                     }
                 }
@@ -233,7 +261,7 @@ namespace Car_Renting_Software
             }
             catch(Exception e3)
             {
-                MessageBox.Show(e3.ToString() + "\n\n\nUR BAD", "Error");
+                MessageBox.Show(e3.ToString(), "Error");
                 //dataRead.Close();
                 // Close();
             }
@@ -241,7 +269,28 @@ namespace Car_Renting_Software
 
         private void CarData_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
-
+            MessageBox.Show("The row index" + e.RowIndex);
+            if(e.RowIndex != -1)
+            {
+                theSelectedRow = e.RowIndex;
+                amountOfRows = CarData.SelectedRows.Count;
+                String[] dataString = new String[CarData.Columns.Count];
+                
+                foreach(DataGridViewRow theRow in CarData.SelectedRows)
+                {
+                    for(int i = 0; i < dataString.Length; i++)
+                    {
+                        dataString[i] = theRow.Cells[i].Value.ToString();
+                    }
+                }
+                MessageBox.Show("theRow = " + dataString[1]);
+                
+                for(int i = 0; i < dataString.Length; i++)
+                {
+                    CarInfoBox.Text = CarInfoBox.Text + dataString[i] + "\n";
+                }
+            }
+            
         }
 
         private void TypeText_Click(object sender, EventArgs e)
