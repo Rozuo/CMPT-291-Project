@@ -102,6 +102,7 @@
             this.profileButton.TabIndex = 4;
             this.profileButton.Text = "View Profile";
             this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // clientLandingPage
             // 

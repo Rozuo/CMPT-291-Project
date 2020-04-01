@@ -20,3 +20,4 @@ C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRe
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.GenerateResource.cache
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.exe
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources

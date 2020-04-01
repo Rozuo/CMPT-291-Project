@@ -41,7 +41,6 @@ namespace _291CarRental
             try
             {
                 datab = new database(username.Text);
-                
                 /*
                  * The following parameter block denies SQL injection, by splitting the input into parameters, which will account for random apostrophes '
                  */
@@ -54,6 +53,7 @@ namespace _291CarRental
                 //SqlDataAdapter sda = new SqlDataAdapter("Select role from Users Where username='" + username.Text + "' and password='" + password.Text + "'   ", datab.myConnection);
                 DataTable dt = new System.Data.DataTable();
                 sda.Fill(dt);
+                datab.myCommand.Parameters.Clear();
                 if (dt.Rows.Count == 1)
                 {
                     switch (dt.Rows[0]["Role"] as string)
@@ -78,7 +78,7 @@ namespace _291CarRental
                                  * Client form flow handled here
                                  */
                                 this.Hide();
-                                clientLandingPage CLP = new clientLandingPage();
+                                clientLandingPage CLP = new clientLandingPage(datab);
                                 CLP.ShowDialog();
                                 Application.Exit();
                                 break;
