@@ -51,12 +51,13 @@ namespace _291CarRental
                 datab.myCommand.Parameters.AddWithValue("Gold", 0);                         // could also use 'true' or 'false'
                 datab.myCommand.Parameters.AddWithValue("role", "Client");
                 errorFlag = checkInput(errorFlag, Phone);
-                errorFlag = usernameExists(errorFlag, temp); // 
+                errorFlag = usernameExists(errorFlag, temp);  
                 MessageBox.Show(datab.myCommand.CommandText.ToString());
                 datab.myCommand.ExecuteNonQuery();
                 
 
                 MessageBox.Show("You have reigistered!", "FINALIZE");
+                datab.myCommand.Parameters.Clear();
                 this.Close();
                
 
@@ -65,26 +66,15 @@ namespace _291CarRental
             catch
             {
                 if (errorFlag == 1)
-                {
                     MessageBox.Show("ERROR: Something seems to have failed. Please check if your information is correct, or if all information needed is inputted.", "ERROR");
-                    retryForm(this);
-                }
                 if (errorFlag == 2)
-                {
                     MessageBox.Show("ERROR: conformation password field and password field do not match", "PASSWORD MATCH ERROR");
-                    retryForm(this);
-                }
                 if (errorFlag == 3)
-                {
                     MessageBox.Show("ERROR: Username already exists. Please try again with a different username");
-                    retryForm(this);
-                }
                 else
-                {
-                    MessageBox.Show("An unexpected Error occured:: SQL");
-                    retryForm(this);
-                }
-                
+                    MessageBox.Show("An unexpected Error occured:: SQL");   
+                datab.myCommand.Parameters.Clear();
+
             }
             
 
@@ -110,26 +100,7 @@ namespace _291CarRental
         {
 
         }
-        public void retryForm(RegisterClient original)
-        {
-            using (RegisterClient retry = new RegisterClient(datab))
-            {
-                retry.FirstName.Text = original.FirstName.Text;
-                retry.FirstName.ForeColor = Color.Black;
-                retry.LastName.Text = original.LastName.Text;
-                retry.LastName.ForeColor = Color.Black;
-                retry.Address.Text = original.Address.Text;
-                retry.Address.ForeColor = Color.Black;
-                retry.Phone1.Text = original.Phone1.Text;
-                retry.Phone1.ForeColor = Color.Black;
-                retry.Phone2.Text = original.Phone2.Text;
-                retry.Phone2.ForeColor = Color.Black;
-                retry.Phone3.Text = original.Phone3.Text;
-                retry.Phone3.ForeColor = Color.Black;
-                original.Close();
-                retry.ShowDialog();
-            }
-        }
+
         public int usernameExists(int flag, database copy)
         {
             /*
