@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.confirmButton = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.makeBox = new System.Windows.Forms.TextBox();
             this.colorBox = new System.Windows.Forms.TextBox();
             this.carIDBox = new System.Windows.Forms.TextBox();
@@ -65,8 +64,10 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(546, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -86,13 +87,6 @@
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(922, 235);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 368);
-            this.vScrollBar1.TabIndex = 3;
-            // 
             // makeBox
             // 
             this.makeBox.Location = new System.Drawing.Point(12, 209);
@@ -100,6 +94,7 @@
             this.makeBox.Size = new System.Drawing.Size(113, 20);
             this.makeBox.TabIndex = 5;
             this.makeBox.TextChanged += new System.EventHandler(this.makeBox_TextChanged);
+            this.makeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.makeBox_KeyDown);
             // 
             // colorBox
             // 
@@ -108,6 +103,7 @@
             this.colorBox.Size = new System.Drawing.Size(100, 20);
             this.colorBox.TabIndex = 7;
             this.colorBox.TextChanged += new System.EventHandler(this.colorBox_TextChanged);
+            this.colorBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.colorBox_KeyDown);
             // 
             // carIDBox
             // 
@@ -116,6 +112,7 @@
             this.carIDBox.Size = new System.Drawing.Size(120, 20);
             this.carIDBox.TabIndex = 9;
             this.carIDBox.TextChanged += new System.EventHandler(this.carIDBox_TextChanged);
+            this.carIDBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.carIDBox_KeyDown);
             // 
             // filterButton
             // 
@@ -126,6 +123,7 @@
             this.filterButton.Text = "Filter";
             this.filterButton.UseVisualStyleBackColor = true;
             this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            this.filterButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.filterButton_KeyDown);
             // 
             // pictureBox1
             // 
@@ -139,6 +137,7 @@
             // availableCheckBox
             // 
             this.availableCheckBox.AutoSize = true;
+            this.availableCheckBox.ForeColor = System.Drawing.Color.White;
             this.availableCheckBox.Location = new System.Drawing.Point(575, 213);
             this.availableCheckBox.Name = "availableCheckBox";
             this.availableCheckBox.Size = new System.Drawing.Size(93, 17);
@@ -154,6 +153,7 @@
             this.typeBox.Size = new System.Drawing.Size(100, 20);
             this.typeBox.TabIndex = 18;
             this.typeBox.TextChanged += new System.EventHandler(this.typeBox_TextChanged);
+            this.typeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.typeBox_KeyDown);
             // 
             // modelBox
             // 
@@ -162,6 +162,7 @@
             this.modelBox.Size = new System.Drawing.Size(100, 20);
             this.modelBox.TabIndex = 19;
             this.modelBox.TextChanged += new System.EventHandler(this.modelBox_TextChanged);
+            this.modelBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.modelBox_KeyDown);
             // 
             // CarData
             // 
@@ -182,7 +183,7 @@
             this.CarData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CarData.Size = new System.Drawing.Size(907, 368);
             this.CarData.TabIndex = 20;
-            this.CarData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarData_CellContentClick_2);
+            this.CarData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarData_CellClick_2);
             // 
             // vehicleIDDataGridViewTextBoxColumn
             // 
@@ -250,7 +251,9 @@
             // MakeText
             // 
             this.MakeText.AutoSize = true;
+            this.MakeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.MakeText.Enabled = false;
+            this.MakeText.ForeColor = System.Drawing.Color.White;
             this.MakeText.Location = new System.Drawing.Point(12, 191);
             this.MakeText.Name = "MakeText";
             this.MakeText.Size = new System.Drawing.Size(34, 13);
@@ -261,6 +264,7 @@
             // 
             this.ModelText.AutoSize = true;
             this.ModelText.Enabled = false;
+            this.ModelText.ForeColor = System.Drawing.Color.White;
             this.ModelText.Location = new System.Drawing.Point(128, 191);
             this.ModelText.Name = "ModelText";
             this.ModelText.Size = new System.Drawing.Size(36, 13);
@@ -271,6 +275,7 @@
             // 
             this.TypeText.AutoSize = true;
             this.TypeText.Enabled = false;
+            this.TypeText.ForeColor = System.Drawing.Color.White;
             this.TypeText.Location = new System.Drawing.Point(234, 191);
             this.TypeText.Name = "TypeText";
             this.TypeText.Size = new System.Drawing.Size(31, 13);
@@ -282,6 +287,7 @@
             // 
             this.ColorText.AutoSize = true;
             this.ColorText.Enabled = false;
+            this.ColorText.ForeColor = System.Drawing.Color.White;
             this.ColorText.Location = new System.Drawing.Point(340, 191);
             this.ColorText.Name = "ColorText";
             this.ColorText.Size = new System.Drawing.Size(31, 13);
@@ -292,6 +298,7 @@
             // 
             this.CarIDText.AutoSize = true;
             this.CarIDText.Enabled = false;
+            this.CarIDText.ForeColor = System.Drawing.Color.White;
             this.CarIDText.Location = new System.Drawing.Point(446, 191);
             this.CarIDText.Name = "CarIDText";
             this.CarIDText.Size = new System.Drawing.Size(44, 13);
@@ -311,6 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1268, 615);
             this.Controls.Add(this.CarInfoBox);
             this.Controls.Add(this.CarIDText);
@@ -327,7 +335,6 @@
             this.Controls.Add(this.carIDBox);
             this.Controls.Add(this.colorBox);
             this.Controls.Add(this.makeBox);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.textBox1);
             this.Name = "Form4";
@@ -346,7 +353,6 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button confirmButton;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.TextBox makeBox;
         private System.Windows.Forms.TextBox colorBox;
         private System.Windows.Forms.TextBox carIDBox;

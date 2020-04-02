@@ -17,8 +17,6 @@ namespace _291CarRental
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginForm());
-            Application.Run(new Car_Renting_Software.Form4());
-            Application.Run(new WindowsFormsApp1.Reservation());
         }
     }
 }

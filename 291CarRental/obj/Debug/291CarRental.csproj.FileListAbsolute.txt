@@ -35,3 +35,4 @@ C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.pdb
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.addRow.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.Reservation.resources
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources

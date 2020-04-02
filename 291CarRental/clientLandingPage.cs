@@ -34,5 +34,11 @@ namespace _291CarRental
             Profile profile = new Profile(datab);
             profile.ShowDialog();
         }
+
+        private void checkCarButton_Click(object sender, EventArgs e)
+        {
+            Car_Renting_Software.Form4 car = new Car_Renting_Software.Form4(datab);
+            car.ShowDialog();
+        }
     }
 }

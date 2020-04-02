@@ -40,13 +40,14 @@
             // checkCarButton
             // 
             this.checkCarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.checkCarButton.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkCarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkCarButton.Location = new System.Drawing.Point(31, 115);
             this.checkCarButton.Name = "checkCarButton";
             this.checkCarButton.Size = new System.Drawing.Size(470, 85);
             this.checkCarButton.TabIndex = 0;
             this.checkCarButton.Text = "Rent a Vehicle";
             this.checkCarButton.UseVisualStyleBackColor = false;
+            this.checkCarButton.Click += new System.EventHandler(this.checkCarButton_Click);
             // 
             // panel1
             // 
@@ -61,18 +62,18 @@
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Font = new System.Drawing.Font("Century Schoolbook", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.welcomeLabel.Location = new System.Drawing.Point(12, 21);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(547, 57);
+            this.welcomeLabel.Size = new System.Drawing.Size(544, 55);
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome to Car Rentals";
             // 
             // currentRentalButton
             // 
             this.currentRentalButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.currentRentalButton.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentRentalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentRentalButton.Location = new System.Drawing.Point(31, 227);
             this.currentRentalButton.Name = "currentRentalButton";
             this.currentRentalButton.Size = new System.Drawing.Size(470, 85);
@@ -83,7 +84,7 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.Brown;
-            this.exitButton.Font = new System.Drawing.Font("Century Schoolbook", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.Location = new System.Drawing.Point(31, 438);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(470, 71);
@@ -95,7 +96,7 @@
             // profileButton
             // 
             this.profileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.profileButton.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileButton.Location = new System.Drawing.Point(31, 333);
             this.profileButton.Name = "profileButton";
             this.profileButton.Size = new System.Drawing.Size(470, 85);

@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="CarRentalPage.Designer.cs">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>

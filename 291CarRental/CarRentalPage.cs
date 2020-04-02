@@ -27,15 +27,16 @@ namespace Car_Renting_Software
         private Dictionary<String, String> parameters = new Dictionary<String, String>();
 
 
-        private _291CarRental.database datab = new _291CarRental.database(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
+        private _291CarRental.database datab; //= new _291CarRental.database(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
         /*
         private SqlDataReader dataRead;
         private SqlCommand dataCommand;
         private SqlConnection dataConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
         */
-        public Form4()
+        public Form4(_291CarRental.database datab)
         {
             InitializeComponent();
+            this.datab = datab;
             /*
             dataConnection.Open();
             dataCommand = new SqlCommand();
@@ -48,14 +49,12 @@ namespace Car_Renting_Software
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void confirmButton_Click(object sender, EventArgs e)
         {
-
+            
+            WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab);
+            reserve.ShowDialog();
+            Close();
         }
 
         private void carIDBox_TextChanged(object sender, EventArgs e)
@@ -85,11 +84,6 @@ namespace Car_Renting_Software
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void colorBox_TextChanged(object sender, EventArgs e)
         {
             color = colorBox.Text;
@@ -106,10 +100,6 @@ namespace Car_Renting_Software
             }
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void modelBox_TextChanged(object sender, EventArgs e)
         {
@@ -195,26 +185,7 @@ namespace Car_Renting_Software
                             break;
                     }
                 }
-                /*
-                foreach(KeyValuePair<string, string> param in parameters)
-                {
-                    cmd = cmd + param.Key + " = " + param.Value + " and ";
-                    switch (param.Value)
-                    {
-                        case ("@color"):
-                            dataCommand.Parameters.AddWithValue("color", color);
-                            break;
-                        case ("@model"):
-                            dataCommand.Parameters.AddWithValue("model", model);
-                            break;
-                        case ("@make"):
-                            dataCommand.Parameters.AddWithValue("make", make);
-                            break;
-                        case ("@type"):
-                            dataCommand.Parameters.AddWithValue("type", type);
-                            break;
-                    }
-                }*/
+
                 //MessageBox.Show("cmd = " + cmd);                    // Debug purposes
 
                 int lastAnd = cmd.LastIndexOf(" and ");       // get last index of the and
@@ -244,17 +215,7 @@ namespace Car_Renting_Software
                         datab.myReader["Type of Vehicle"].ToString(),
                         datab.myReader["UserID"].ToString());
                 }
-                /*while (dataRead.Read())
-                {
 
-                    
-                    CarData.Rows.Add(dataRead["VehicleID"].ToString(), dataRead["Color"].ToString(), dataRead["Model"].ToString(),
-                        dataRead["Make"].ToString(),
-                        dataRead["Status"].ToString(),
-                        dataRead["Type of Vehicle"].ToString(),
-                        dataRead["UserID"].ToString());
-                        
-                }*/
                 datab.myReader.Close();
                 //dataCommand.Parameters.Clear();
                 datab.clearParameters();
@@ -267,35 +228,87 @@ namespace Car_Renting_Software
             }
         }
 
-        private void CarData_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        private void TypeText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void makeBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                modelBox.Focus();
+            }
+        }
+
+        private void modelBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            {
+                typeBox.Focus();
+            }
+        }
+
+        private void typeBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData.Equals(Keys.Tab))
+            {
+                colorBox.Focus();
+            }
+        }
+
+        private void colorBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData.Equals(Keys.Tab))
+            {
+                carIDBox.Focus();
+            }
+        }
+
+        private void carIDBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData.Equals(Keys.Tab))
+            {
+                filterButton.Focus();
+            }
+        }
+
+        private void filterButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData.Equals(Keys.Tab))
+            {
+                makeBox.Focus();
+            }
+        }
+
+        private void CarData_CellClick_2(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show("The row index" + e.RowIndex);
-            if(e.RowIndex != -1)
+            if (e.RowIndex != -1)
             {
+                CarInfoBox.Clear();
                 theSelectedRow = e.RowIndex;
                 amountOfRows = CarData.SelectedRows.Count;
                 String[] dataString = new String[CarData.Columns.Count];
-                
-                foreach(DataGridViewRow theRow in CarData.SelectedRows)
+
+                foreach (DataGridViewRow theRow in CarData.SelectedRows)
                 {
-                    for(int i = 0; i < dataString.Length; i++)
+                    for (int i = 0; i < dataString.Length; i++)
                     {
                         dataString[i] = theRow.Cells[i].Value.ToString();
                     }
                 }
                 MessageBox.Show("theRow = " + dataString[1]);
-                
-                for(int i = 0; i < dataString.Length; i++)
+
+                for (int i = 0; i < dataString.Length; i++)
                 {
                     CarInfoBox.Text = CarInfoBox.Text + dataString[i] + "\n";
                 }
             }
-            
-        }
-
-        private void TypeText_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("uh oh raggy you're a beater (baddy)");
+            }
         }
     }
 }
