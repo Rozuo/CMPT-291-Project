@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
             try
             {
                 guid = (Guid)data.myCommand.ExecuteScalar();
-                //MessageBox.Show(guid.ToString());
                 data.myCommand.Parameters.Clear();
             }
             catch
@@ -48,43 +47,33 @@ namespace WindowsFormsApp1
                 MessageBox.Show("User does not exist");
             }
 
-            /*search for the carID*/
-            //Guid guidCar;
-            //data.myCommand.CommandText = "SELECT VehicleID from Car where Car.Color =@Color and Car.Model" +
-            //    " = @Model and Car.Make = @Make and Car.[Type of Vehicle] = @Type";
-            //data.myCommand.Parameters.AddWithValue("user", "PhilipBerry");
-
-            //guidCar = (Guid)data.myCommand.ExecuteScalar();
-            //MessageBox.Show(guidCar.ToString());
-            //data.myCommand.Parameters.Clear();
-
-            /*search for the branchID*/
             Guid guidLocation;
             data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
             data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
-            //try
-            //{
+            guidLocation = (Guid)data.myCommand.ExecuteScalar();
+            data.myCommand.Parameters.Clear();
+            try
+            {
                 guidLocation = (Guid)data.myCommand.ExecuteScalar();
-                //MessageBox.Show(guidLocation.ToString());
                 data.myCommand.Parameters.Clear();
-                Decimal price = calPrice(CarID, startTimePicker, endTimePicker);
-            
+                Decimal price = calPrice(CarID, startTimePicker, endTimePicker);//calculate price
                 /*insert the row*/
-            /*
-            Guid guidRev = Guid.NewGuid();
-            data.myCommand.CommandText = "INSERT INTO [dbo].[Reservation] VALUES " +
-                "(@ReservationID, @startDate, @endDate, @price, @BranchID, @VehicleID, @UserID)";
-            data.myCommand.Parameters.AddWithValue("ReservationID", guidRev);
-            data.myCommand.Parameters.AddWithValue("startDate", startTimePicker.Value);
-            data.myCommand.Parameters.AddWithValue("endDate", endTimePicker.Value);
-            data.myCommand.Parameters.AddWithValue("price", guidRev);
-            data.myCommand.Parameters.AddWithValue("BranchID", guidLocation);
-            data.myCommand.Parameters.AddWithValue("VehicleID", CarID);
-            data.myCommand.Parameters.AddWithValue("UserID", customerID);*/
-            //}
-            // catch {
-            //    MessageBox.Show("Please choose a city");
-            //}
+                Guid guidRev = Guid.NewGuid();
+                data.myCommand.CommandText = "INSERT INTO [dbo].[Reservation] VALUES (@ReservationID, @startDate, @endDate, @price, @BranchID, @VehicleID, @UserID)";
+                data.myCommand.Parameters.AddWithValue("ReservationID", guidRev);
+                data.myCommand.Parameters.AddWithValue("startDate", startTimePicker.Value);
+                data.myCommand.Parameters.AddWithValue("endDate", endTimePicker.Value);
+                data.myCommand.Parameters.AddWithValue("price", price);
+                data.myCommand.Parameters.AddWithValue("BranchID", guidLocation);
+                data.myCommand.Parameters.AddWithValue("VehicleID", CarID);
+                data.myCommand.Parameters.AddWithValue("UserID", customerID);
+                data.myCommand.ExecuteNonQuery();
+                data.myCommand.Parameters.Clear();
+                //MessageBox.Show("Reservation added");
+            }
+             catch {
+                MessageBox.Show("Please choose a city");
+            }
             this.Close();
         }
 
