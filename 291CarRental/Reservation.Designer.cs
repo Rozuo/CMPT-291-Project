@@ -32,14 +32,6 @@
             this.title = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.dataPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._291GroupProjectDataSet = new WindowsFormsApp1._291GroupProjectDataSet();
             this.calendarPage = new System.Windows.Forms.TabPage();
@@ -51,14 +43,22 @@
             this.reservationTableAdapter = new WindowsFormsApp1._291GroupProjectDataSetTableAdapters.ReservationTableAdapter();
             this._291GroupProjectDataSet1 = new WindowsFormsApp1._291GroupProjectDataSet();
             this._291GroupProjectDataSet2 = new WindowsFormsApp1._291GroupProjectDataSet();
+            this.ReservationGrid = new System.Windows.Forms.DataGridView();
+            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.branchIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.dataPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReservationGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -84,7 +84,7 @@
             // 
             // dataPage
             // 
-            this.dataPage.Controls.Add(this.dataGridView1);
+            this.dataPage.Controls.Add(this.ReservationGrid);
             this.dataPage.Location = new System.Drawing.Point(4, 22);
             this.dataPage.Name = "dataPage";
             this.dataPage.Padding = new System.Windows.Forms.Padding(3);
@@ -92,66 +92,6 @@
             this.dataPage.TabIndex = 0;
             this.dataPage.Text = "Forms";
             this.dataPage.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reservationIDDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.totalPriceDataGridViewTextBoxColumn,
-            this.Column1,
-            this.VehicleID,
-            this.UserID});
-            this.dataGridView1.DataSource = this.reservationBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(772, 310);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // reservationIDDataGridViewTextBoxColumn
-            // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "ReservationID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "ReservationID";
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "Start date";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Start date";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "End date";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "End date";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total Price";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price";
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "BranchID";
-            this.Column1.HeaderText = "BranchID";
-            this.Column1.Name = "Column1";
-            // 
-            // VehicleID
-            // 
-            this.VehicleID.DataPropertyName = "VehicleID";
-            this.VehicleID.HeaderText = "VehicleID";
-            this.VehicleID.Name = "VehicleID";
-            // 
-            // UserID
-            // 
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
             // 
             // reservationBindingSource
             // 
@@ -235,6 +175,67 @@
             this._291GroupProjectDataSet2.DataSetName = "_291GroupProjectDataSet";
             this._291GroupProjectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // ReservationGrid
+            // 
+            this.ReservationGrid.AutoGenerateColumns = false;
+            this.ReservationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReservationGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reservationIDDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn,
+            this.totalPriceDataGridViewTextBoxColumn,
+            this.branchIDDataGridViewTextBoxColumn,
+            this.vehicleIDDataGridViewTextBoxColumn,
+            this.userIDDataGridViewTextBoxColumn});
+            this.ReservationGrid.DataSource = this.reservationBindingSource;
+            this.ReservationGrid.Location = new System.Drawing.Point(0, 0);
+            this.ReservationGrid.Name = "ReservationGrid";
+            this.ReservationGrid.Size = new System.Drawing.Size(768, 310);
+            this.ReservationGrid.TabIndex = 0;
+            this.ReservationGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReservationGrid_CellContentClick);
+            // 
+            // reservationIDDataGridViewTextBoxColumn
+            // 
+            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "Start date";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Start date";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "End date";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "End date";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // totalPriceDataGridViewTextBoxColumn
+            // 
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total Price";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price";
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
+            // 
+            // branchIDDataGridViewTextBoxColumn
+            // 
+            this.branchIDDataGridViewTextBoxColumn.DataPropertyName = "BranchID";
+            this.branchIDDataGridViewTextBoxColumn.HeaderText = "BranchID";
+            this.branchIDDataGridViewTextBoxColumn.Name = "branchIDDataGridViewTextBoxColumn";
+            // 
+            // vehicleIDDataGridViewTextBoxColumn
+            // 
+            this.vehicleIDDataGridViewTextBoxColumn.DataPropertyName = "VehicleID";
+            this.vehicleIDDataGridViewTextBoxColumn.HeaderText = "VehicleID";
+            this.vehicleIDDataGridViewTextBoxColumn.Name = "vehicleIDDataGridViewTextBoxColumn";
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,13 +252,13 @@
             this.Load += new System.EventHandler(this.Reservation_Load);
             this.tabControl.ResumeLayout(false);
             this.dataPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReservationGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,14 +280,14 @@
         private System.Windows.Forms.ToolStripMenuItem menuButton1;
         private System.Windows.Forms.ToolStripMenuItem addRow;
         private System.Windows.Forms.ToolStripMenuItem removeRow;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView ReservationGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn branchIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
     }
 }

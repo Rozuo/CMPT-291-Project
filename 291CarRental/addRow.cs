@@ -15,13 +15,15 @@ namespace WindowsFormsApp1
         private _291CarRental.database data;
         private Guid customerID;
         private Guid CarID;
-        public addRow(_291CarRental.database data, Guid customerID, Guid CarID)
+        private Reservation theOpenResForm;
+
+        public addRow(_291CarRental.database data, Guid customerID, Guid CarID, Reservation theOpenResForm)
         {
             InitializeComponent();
             this.data = data;
             this.customerID = customerID;
             this.CarID = CarID;
-
+            this.theOpenResForm = theOpenResForm;
         }
 
         private void cancelB_Click(object sender, EventArgs e)
@@ -47,13 +49,14 @@ namespace WindowsFormsApp1
                 MessageBox.Show("User does not exist");
             }*/
 
-            Guid guidLocation;
-            data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
-            data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
-            guidLocation = (Guid)data.myCommand.ExecuteScalar();
-            data.myCommand.Parameters.Clear();
+            
             try
             {
+                Guid guidLocation;
+                data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
+                data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
+                guidLocation = (Guid)data.myCommand.ExecuteScalar();
+                data.myCommand.Parameters.Clear();
                 //guidLocation = (Guid)data.myCommand.ExecuteScalar();
                 //data.myCommand.Parameters.Clear();
                 Decimal price = calPrice(CarID, startTimePicker, endTimePicker);//calculate price
@@ -70,10 +73,12 @@ namespace WindowsFormsApp1
                 data.myCommand.ExecuteNonQuery();
                 data.myCommand.Parameters.Clear();
                 //MessageBox.Show("Reservation added");
+                
             }
              catch {
                 MessageBox.Show("Please choose a city");
             }
+            theOpenResForm.updateTable();
             this.Close();
         }
 

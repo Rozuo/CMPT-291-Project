@@ -49,8 +49,9 @@ namespace WindowsFormsApp1
             data.myCommand.Parameters.AddWithValue("user", "AmyBillid");
             tempUser = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
-            addRow addrow = new addRow(data, tempUser, tempCar);
+            addRow addrow = new addRow(data, tempUser, tempCar, this);
             addrow.ShowDialog();
+            
         }
 
 
@@ -61,10 +62,21 @@ namespace WindowsFormsApp1
             //form1.Show();
         }
 
+        private void ReservationGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         /*
         private void reservationBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }*/
+        public void updateTable()
+        {
+            /*data.myConnection.Close();
+            data.myConnection.Open();*/
+            reservationTableAdapter.Fill(_291GroupProjectDataSet.Reservation);
+        }
     }
 }
