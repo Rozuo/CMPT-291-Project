@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "291CarRental", "291CarRenta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car Renting Software", "..\Car Renting Software\Car Renting Software\Car Renting Software.csproj", "{0230C685-1D6A-4785-BF15-920492E84903}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "..\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1.csproj", "{15C51AF2-4382-43AF-BB68-D19C308FC61D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0230C685-1D6A-4785-BF15-920492E84903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0230C685-1D6A-4785-BF15-920492E84903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0230C685-1D6A-4785-BF15-920492E84903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C51AF2-4382-43AF-BB68-D19C308FC61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C51AF2-4382-43AF-BB68-D19C308FC61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C51AF2-4382-43AF-BB68-D19C308FC61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C51AF2-4382-43AF-BB68-D19C308FC61D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

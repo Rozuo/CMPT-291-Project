@@ -43,6 +43,7 @@ namespace _291CarRental
 
         // AREX CONNECTION STRING: @"Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True"
         // Roos CONNECTION STRING: @"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True"
+        // TIMS CONNECTION STRING: @"Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True"
         public database()
         {
             /*
