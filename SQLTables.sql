@@ -7,102 +7,81 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+CREATE TABLE [dbo].[Branch](
+	[BranchID][int] NOT NULL,
+	[Location][nvarchar](20) NULL,
+	CONSTRAINT [PK_BranchID] PRIMARY KEY CLUSTERED
+	([BranchID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
+) ON [PRIAMRY]
+
+GO
+
+CREATE TABLE [dbo].[Car](
+	[VehicleID][int] NOT NULL,
+	[Type of Vehicle][varchar](50) NULL,
+	[Color][varchar](50) NULL,
+	[Make][varchar](10) NULL,
+	[Brand][varchar](20) NULL,
+	[CustomerID][int] NOT NULL
+	CONSTRAINT FK_Customer_ID FOREIGN KEY (CustomerID)
+	REFERENCES Client(CustomerID)
+	CONSTRAINT [PK_Car] PRIMARY KEY CLUSTERED
+	([VehicleID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
+) ON [PRIAMRY]
+
+GO
 
 CREATE TABLE [dbo].[CarType](
-    [Type of Vehicle][varchar](50) NOT NULL,
 	[Daily Price][money] NULL,
 	[Weekly Price][money] NULL,
-	[Monthly Price][money] NULL,
-	CONSTRAINT PK_Type_of_Vehicle 
-	PRIMARY KEY ([Type of Vehicle])
-) 
+	[Monthly Price][money] NULL
+)
 
-/*CREATE TABLE [dbo].[Login](
-	[username][nvarchar](50) NOT NULL,
-	[password][nvarchar](50) NOT NULL,
-	[role][nvarchar] (50) NOT NULL,
-	CONSTRAINT PK_username
-	PRIMARY KEY (username))
-	*/
 
-	-- 0 false
-	-- 1 true
-CREATE TABLE [dbo].[Users](
-	[UserID][uniqueidentifier] NOT NULL,
+CREATE TABLE [dbo].[Client](
+	[CustomerID][int] NOT NULL,
 	[Total Year Rent][nchar](50) NULL,
-	[username][nvarchar](50) NOT NULL,
-	[password][nvarchar](50) NOT NULL,
 	[First Name][nchar](50) NOT NULL,
 	[Last Name][nchar](20) NOT NULL,
 	[Address][nchar](100) NOT NULL,
-	[CreditCardNum][bigint] NULL,
+	[CreditCardNum][int] NULL,
 	[Phone][nvarchar](15) NULL,
-	[Gold][bit] NOT NULL,
-	[role][nvarchar] (50) NOT NULL,
-	CONSTRAINT PK_UserID 
-	PRIMARY KEY (UserID))
-
-GO
-
-
-CREATE TABLE [dbo].[Branch](
-	[BranchID][uniqueidentifier] NOT NULL,
-	[Location][nvarchar](20) NULL,
-	CONSTRAINT PK_BranchID
-	PRIMARY KEY (BranchID))
-
-GO
-
-
-/* Status: 0 = ready, 1 = taken, 2 = repairing
- * Type of vehiiiicle is the frame of the car ex: SUV, Sedan and Sport
- * Model: the name of the car
- * Make: the company who makes vehicle contraption.
- */
-CREATE TABLE [dbo].[Car](
-	[VehicleID][uniqueidentifier] UNIQUE NOT NULL,
-	[Color][varchar](50) NULL,
-	[Model][varchar](50) NULL,
-	[Make][varchar](10) NULL,
-	[Status][int] NULL,
-	[Type of Vehicle][varchar](50) NOT NULL,
-	[UserID][uniqueidentifier] NULL
-	CONSTRAINT FK_User_ID FOREIGN KEY (UserID)
-	REFERENCES Users(UserID),
-	CONSTRAINT FK_Type_of_Vehicle FOREIGN KEY ([Type of Vehicle])
-	REFERENCES CarType([Type of Vehicle]),
-	CONSTRAINT PK_Car 
-	PRIMARY KEY (VehicleID))
-
-GO
-
-
-
-
-
-CREATE TABLE [dbo].[Reservation](
-	[ReservationID][uniqueidentifier] NOT NULL,
-	[Start date][smalldatetime] NULL,
-	[End date][smalldatetime] NULL,
-	[Total Price][money] NULL,
-	[BranchID][uniqueidentifier] NOT NULL,
-	[VehicleID][uniqueidentifier] NOT NULL,
-	[UserID][uniqueidentifier] NOT NULL,
-	CONSTRAINT FK_Branch_ID FOREIGN KEY (BranchID)
-	REFERENCES Branch(BranchID),
-	CONSTRAINT FK_Car_ID FOREIGN KEY (VehicleID)
-	REFERENCES Car(VehicleID),
-	CONSTRAINT FK_TheUserID FOREIGN KEY (UserID)
-	REFERENCES Users(UserID),
-	CONSTRAINT PK_Rerservation
-	PRIMARY KEY (ReservationID))
+	CONSTRAINT [PK_Client] PRIMARY KEY CLUSTERED
+	([CustomerID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
+) ON [PRIAMRY]
 
 GO
 
 CREATE TABLE [dbo].[ExtraFee](
-	[ReservationID][uniqueidentifier] NOT NULL,
+	[ReservationID][int] NOT NULL,
 	[Types of fee][varchar](10) NULL,
 	[Price][money] NULL
-	CONSTRAINT FK_ReservationID FOREIGN KEY (ReservationID)
-	REFERENCES Reservation(ReservationID))
+	CONSTRAINT [PK_ExtraFee] PRIMARY KEY CLUSTERED
+	([ReservationID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
+) ON [PRIAMRY]
+
+GO
+
+CREATE TABLE [dbo].[Reservation](
+	[ReservationID][int] NOT NULL,
+	[Start date][datetime] NULL,
+	[End date][datetime] NULL,
+	[Total Price][money] NULL,
+	[BranchID][int] NOT NULL,
+	[VehicleID][int] NOT NULL,
+	[CustomerID][int] NOT NULL,
+	CONSTRAINT FK_Branch_ID FOREIGN KEY (BranchID)
+	REFERENCES Branch(BranchID),
+	CONSTRAINT FK_Car_ID FOREIGN KEY (VehicleID)
+	REFERENCES Car(VehicleID),
+	CONSTRAINT FK_Client_ID FOREIGN KEY (CustomerID)
+	REFERENCES Client(CustomerID),
+	CONSTRAINT [PK_Rerservation] PRIMARY KEY CLUSTERED
+	([ReservationID] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON) ON [PRIMARY]
+) ON [PRIAMRY]
+
+GO
+
+ALTER TABLE Car ADD Status BIT NOT NULL;
+
 GO

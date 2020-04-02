@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Car_Renting_Software
+namespace _291CarRental
 {
     static class Program
     {
@@ -16,7 +16,8 @@ namespace Car_Renting_Software
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form4());
+            Application.Run(new loginForm());
+            Application.Run(new Car_Renting_Software.Form4());
         }
     }
 }
