@@ -19,6 +19,8 @@ namespace _291CarRental
         private int theSelectedRow;
         private string vehicleID;
         private string cmd;
+        private bool lateCheck = false;
+        private int lateFee = 200;
         public ProcessReturns(database data)
         {
             InitializeComponent();
@@ -127,6 +129,16 @@ namespace _291CarRental
                 MessageBox.Show("This car does not need to be returned.");
                 return;
             }
+
+            if (lateCheck)
+            {
+                cmd = "SELECT Price FROM ExtraFee WHERE ExtraFee.[Types of fee] = @fee";
+                data.myCommand.CommandText = cmd;
+                /*
+                data.myCommand.Parameters.AddWithValue("fee", lateFee));
+                data.q*/
+            }
+
             
             try
             {
@@ -147,6 +159,18 @@ namespace _291CarRental
         private void backButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void late_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lateCheck)
+            {
+                lateCheck = false;
+            }
+            else
+            {
+                lateCheck = true;
+            }
         }
     }
 }
