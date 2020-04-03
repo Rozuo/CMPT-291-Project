@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public Reservation(_291CarRental.database data, string[] carSelectedData)
         {
             InitializeComponent();
-            data = new _291CarRental.database();
+            this.data = data;
         }
 
         private void Reservation_Load(object sender, EventArgs e)

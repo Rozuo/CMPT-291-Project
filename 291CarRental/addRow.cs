@@ -22,6 +22,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.data = data;
+            //extract the userid for later use
+            data.myCommand.CommandText = "SELECT UserID from Users where Users.username = @uname";
+            data.myCommand.Parameters.AddWithValue("uname", data.usr);
+            customerID = (Guid)data.myCommand.ExecuteScalar();
+            data.myCommand.Parameters.Clear();
             //this.customerID = customerID;
             this.CarID = CarID;
             this.theOpenResForm = theOpenResForm;
@@ -35,7 +40,7 @@ namespace WindowsFormsApp1
         private void confirmB_Click(object sender, EventArgs e)
         {
             /*add the information to the row*/
-            data = new _291CarRental.database();
+            //data = new _291CarRental.database();
             /*search for the userID*/
 
             try

@@ -28,7 +28,7 @@ namespace Car_Renting_Software
         private Dictionary<String, String> parameters = new Dictionary<String, String>();
 
 
-        private _291CarRental.database datab; //= new _291CarRental.database(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
+        public _291CarRental.database datab; //= new _291CarRental.database(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
         /*
         private SqlDataReader dataRead;
         private SqlCommand dataCommand;
