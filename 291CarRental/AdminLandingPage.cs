@@ -40,7 +40,8 @@ namespace _291CarRental
 
         private void processReturnsButton_Click(object sender, EventArgs e)
         {
-
+            ProcessReturns returs = new ProcessReturns(data);
+            returs.ShowDialog();
         }
     }
 }

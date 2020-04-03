@@ -39,4 +39,4 @@ C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resource
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.currentRentals.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Report.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.AdminLandingPage.resources
-C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.ProcessRentals.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.ProcessReturns.resources

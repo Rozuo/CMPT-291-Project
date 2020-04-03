@@ -92,11 +92,11 @@
     <Compile Include="CarRentalPage.Designer.cs">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessRentals.cs">
+    <Compile Include="ProcessReturns.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcessRentals.Designer.cs">
-      <DependentUpon>ProcessRentals.cs</DependentUpon>
+    <Compile Include="ProcessReturns.Designer.cs">
+      <DependentUpon>ProcessReturns.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcessRentals.resx">
-      <DependentUpon>ProcessRentals.cs</DependentUpon>
+    <EmbeddedResource Include="ProcessReturns.resx">
+      <DependentUpon>ProcessReturns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>

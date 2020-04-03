@@ -38,7 +38,6 @@
             this._291GroupProjectDataSet1 = new _291CarRental._291GroupProjectDataSet1();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carTableAdapter = new _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
-            this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.locationB = new System.Windows.Forms.ComboBox();
             this.branchL = new System.Windows.Forms.Label();
             this.endTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +46,9 @@
             this.startDateL = new System.Windows.Forms.Label();
             this.priceResult = new System.Windows.Forms.Label();
             this.resultB = new System.Windows.Forms.Button();
+            this.clientUserNameLabel = new System.Windows.Forms.Label();
+            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet1)).BeginInit();
@@ -57,10 +59,11 @@
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.White;
             this.title.Location = new System.Drawing.Point(12, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(156, 25);
+            this.title.Size = new System.Drawing.Size(171, 25);
             this.title.TabIndex = 0;
             this.title.Text = "Add Reservation";
             // 
@@ -127,7 +130,7 @@
             "RedDeer",
             "Vancouver",
             "Richmond"});
-            this.locationB.Location = new System.Drawing.Point(175, 113);
+            this.locationB.Location = new System.Drawing.Point(191, 143);
             this.locationB.Name = "locationB";
             this.locationB.Size = new System.Drawing.Size(121, 21);
             this.locationB.TabIndex = 17;
@@ -137,8 +140,8 @@
             // 
             this.branchL.AutoSize = true;
             this.branchL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branchL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.branchL.Location = new System.Drawing.Point(24, 111);
+            this.branchL.ForeColor = System.Drawing.Color.White;
+            this.branchL.Location = new System.Drawing.Point(40, 141);
             this.branchL.Name = "branchL";
             this.branchL.Size = new System.Drawing.Size(145, 20);
             this.branchL.TabIndex = 13;
@@ -146,7 +149,7 @@
             // 
             // endTimePicker
             // 
-            this.endTimePicker.Location = new System.Drawing.Point(125, 74);
+            this.endTimePicker.Location = new System.Drawing.Point(141, 104);
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.Size = new System.Drawing.Size(200, 20);
             this.endTimePicker.TabIndex = 16;
@@ -155,8 +158,8 @@
             // 
             this.endDateL.AutoSize = true;
             this.endDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.endDateL.Location = new System.Drawing.Point(24, 72);
+            this.endDateL.ForeColor = System.Drawing.Color.White;
+            this.endDateL.Location = new System.Drawing.Point(40, 102);
             this.endDateL.Name = "endDateL";
             this.endDateL.Size = new System.Drawing.Size(95, 20);
             this.endDateL.TabIndex = 14;
@@ -164,7 +167,7 @@
             // 
             // startTimePicker
             // 
-            this.startTimePicker.Location = new System.Drawing.Point(125, 48);
+            this.startTimePicker.Location = new System.Drawing.Point(141, 78);
             this.startTimePicker.Name = "startTimePicker";
             this.startTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startTimePicker.TabIndex = 15;
@@ -173,8 +176,8 @@
             // 
             this.startDateL.AutoSize = true;
             this.startDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.startDateL.Location = new System.Drawing.Point(24, 48);
+            this.startDateL.ForeColor = System.Drawing.Color.White;
+            this.startDateL.Location = new System.Drawing.Point(40, 78);
             this.startDateL.Name = "startDateL";
             this.startDateL.Size = new System.Drawing.Size(95, 20);
             this.startDateL.TabIndex = 18;
@@ -185,7 +188,7 @@
             this.priceResult.AutoSize = true;
             this.priceResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceResult.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.priceResult.Location = new System.Drawing.Point(79, 219);
+            this.priceResult.Location = new System.Drawing.Point(95, 249);
             this.priceResult.Name = "priceResult";
             this.priceResult.Size = new System.Drawing.Size(0, 25);
             this.priceResult.TabIndex = 19;
@@ -194,7 +197,7 @@
             // resultB
             // 
             this.resultB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultB.Location = new System.Drawing.Point(125, 159);
+            this.resultB.Location = new System.Drawing.Point(141, 189);
             this.resultB.Name = "resultB";
             this.resultB.Size = new System.Drawing.Size(160, 28);
             this.resultB.TabIndex = 23;
@@ -202,11 +205,33 @@
             this.resultB.UseVisualStyleBackColor = true;
             this.resultB.Click += new System.EventHandler(this.resultB_Click);
             // 
+            // clientUserNameLabel
+            // 
+            this.clientUserNameLabel.AutoSize = true;
+            this.clientUserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientUserNameLabel.ForeColor = System.Drawing.Color.White;
+            this.clientUserNameLabel.Location = new System.Drawing.Point(40, 44);
+            this.clientUserNameLabel.Name = "clientUserNameLabel";
+            this.clientUserNameLabel.Size = new System.Drawing.Size(201, 20);
+            this.clientUserNameLabel.TabIndex = 24;
+            this.clientUserNameLabel.Text = "Enter Client Username: ";
+            // 
+            // usernameBox
+            // 
+            this.usernameBox.Location = new System.Drawing.Point(241, 44);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(100, 20);
+            this.usernameBox.TabIndex = 25;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
+            // 
             // addRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(455, 375);
+            this.Controls.Add(this.usernameBox);
+            this.Controls.Add(this.clientUserNameLabel);
             this.Controls.Add(this.resultB);
             this.Controls.Add(this.priceResult);
             this.Controls.Add(this.branchL);
@@ -251,5 +276,7 @@
         private System.Windows.Forms.Label startDateL;
         private System.Windows.Forms.Label priceResult;
         private System.Windows.Forms.Button resultB;
+        private System.Windows.Forms.Label clientUserNameLabel;
+        private System.Windows.Forms.TextBox usernameBox;
     }
 }
