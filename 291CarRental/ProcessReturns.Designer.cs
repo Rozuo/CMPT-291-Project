@@ -47,6 +47,8 @@
             this.carSearchLabel = new System.Windows.Forms.Label();
             this.vehicleIDBox = new System.Windows.Forms.TextBox();
             this.filterButton = new System.Windows.Forms.Button();
+            this.late = new System.Windows.Forms.CheckBox();
+            this.damageComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.carData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSetCar)).BeginInit();
@@ -169,9 +171,9 @@
             // 
             // infoBox
             // 
-            this.infoBox.Location = new System.Drawing.Point(560, 87);
+            this.infoBox.Location = new System.Drawing.Point(560, 22);
             this.infoBox.Name = "infoBox";
-            this.infoBox.Size = new System.Drawing.Size(228, 309);
+            this.infoBox.Size = new System.Drawing.Size(228, 300);
             this.infoBox.TabIndex = 4;
             this.infoBox.Text = "";
             // 
@@ -204,12 +206,39 @@
             this.filterButton.UseVisualStyleBackColor = true;
             this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
+            // late
+            // 
+            this.late.AutoSize = true;
+            this.late.ForeColor = System.Drawing.Color.White;
+            this.late.Location = new System.Drawing.Point(579, 330);
+            this.late.Name = "late";
+            this.late.Size = new System.Drawing.Size(47, 17);
+            this.late.TabIndex = 8;
+            this.late.Text = "Late";
+            this.late.UseVisualStyleBackColor = true;
+            this.late.CheckedChanged += new System.EventHandler(this.late_CheckedChanged);
+            // 
+            // damageComboBox
+            // 
+            this.damageComboBox.FormattingEnabled = true;
+            this.damageComboBox.Items.AddRange(new object[] {
+            "Minor Damage",
+            "Moderate Damage",
+            "Major Damage",
+            "Totaled"});
+            this.damageComboBox.Location = new System.Drawing.Point(667, 328);
+            this.damageComboBox.Name = "damageComboBox";
+            this.damageComboBox.Size = new System.Drawing.Size(121, 21);
+            this.damageComboBox.TabIndex = 9;
+            // 
             // ProcessReturns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.damageComboBox);
+            this.Controls.Add(this.late);
             this.Controls.Add(this.filterButton);
             this.Controls.Add(this.vehicleIDBox);
             this.Controls.Add(this.carSearchLabel);
@@ -249,5 +278,7 @@
         private System.Windows.Forms.Label carSearchLabel;
         private System.Windows.Forms.TextBox vehicleIDBox;
         private System.Windows.Forms.Button filterButton;
+        private System.Windows.Forms.CheckBox late;
+        private System.Windows.Forms.ComboBox damageComboBox;
     }
 }
