@@ -37,3 +37,4 @@ C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.Reservation.r
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.currentRentals.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Report.resources

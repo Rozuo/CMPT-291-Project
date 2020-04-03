@@ -44,6 +44,8 @@ namespace _291CarRental
         private void reportButton_Click(object sender, EventArgs e)
         {
             //generate a report
+            Report rep = new Report(data);
+            rep.ShowDialog();
         }
 
         private void dataGridViewReservation_CellClick(object sender, DataGridViewCellEventArgs e)

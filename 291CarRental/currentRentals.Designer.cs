@@ -156,11 +156,11 @@
             // 
             // reportButton
             // 
-            this.reportButton.Location = new System.Drawing.Point(469, 366);
+            this.reportButton.Location = new System.Drawing.Point(488, 366);
             this.reportButton.Name = "reportButton";
             this.reportButton.Size = new System.Drawing.Size(163, 42);
             this.reportButton.TabIndex = 3;
-            this.reportButton.Text = "Report";
+            this.reportButton.Text = "Generate Report";
             this.reportButton.UseVisualStyleBackColor = true;
             this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             // 
