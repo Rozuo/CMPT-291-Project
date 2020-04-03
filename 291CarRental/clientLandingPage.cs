@@ -39,6 +39,7 @@ namespace _291CarRental
         {
             Car_Renting_Software.Form4 car = new Car_Renting_Software.Form4(datab);
             car.ShowDialog();
+            
         }
 
         private void currentRentalButton_Click(object sender, EventArgs e)
