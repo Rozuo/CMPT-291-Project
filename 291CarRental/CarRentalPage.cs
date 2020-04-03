@@ -60,7 +60,15 @@ namespace Car_Renting_Software
             }
             WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab, dataString);
             reserve.ShowDialog();
-            Close();
+            
+            
+            cmd = "update Car set Status = @status, UserID = @userID where Car.VehicleID = @carID";
+            datab.myCommand.Parameters.AddWithValue("status", "1");
+            datab.myCommand.Parameters.AddWithValue("carID", dataString[0]);
+            datab.myCommand.Parameters.AddWithValue("userID", datab.usr);
+            datab.update(cmd);
+            datab.clearParameters();
+            this.carTableAdapter.Fill(this._291GroupProjectDataSetCar.Car);
         }
 
         private void carIDBox_TextChanged(object sender, EventArgs e)
@@ -296,11 +304,6 @@ namespace Car_Renting_Software
                 amountOfRows = CarData.SelectedRows.Count;
                 string[] columnHeaders = new string[CarData.Columns.Count];
 
-                /*
-                foreach (DataGridViewColumn theCol in CarData.SelectedColumns) 
-                {
-                    MessageBox.Show(theCol.HeaderText);
-                }*/
 
                 foreach (DataGridViewRow theRow in CarData.SelectedRows)
                 {

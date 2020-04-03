@@ -67,6 +67,12 @@
     <Compile Include="addRow.Designer.cs">
       <DependentUpon>addRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="currentRentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="currentRentals.Designer.cs">
+      <DependentUpon>currentRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="database.cs" />
     <Compile Include="clientLandingPage.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="_291GroupProjectDataSetReservation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addRow.resx">
       <DependentUpon>addRow.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarRentalPage.resx">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="currentRentals.resx">
+      <DependentUpon>currentRentals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -196,6 +210,17 @@
     </None>
     <None Include="_291GroupProjectDataSetCar.xss">
       <DependentUpon>_291GroupProjectDataSetCar.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xsc">
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_291GroupProjectDataSetReservation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xss">
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

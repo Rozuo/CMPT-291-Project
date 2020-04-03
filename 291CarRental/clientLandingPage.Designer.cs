@@ -80,6 +80,7 @@
             this.currentRentalButton.TabIndex = 2;
             this.currentRentalButton.Text = "View Current Rental";
             this.currentRentalButton.UseVisualStyleBackColor = false;
+            this.currentRentalButton.Click += new System.EventHandler(this.currentRentalButton_Click);
             // 
             // exitButton
             // 
