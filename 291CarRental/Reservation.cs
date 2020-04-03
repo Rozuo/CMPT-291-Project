@@ -13,15 +13,10 @@ namespace WindowsFormsApp1
     public partial class Reservation : Form
     {
         public _291CarRental.database data;
-        string[] carSelectedData;
-        public Reservation(_291CarRental.database data, string[] carSelectedData)
+        public Reservation()
         {
             InitializeComponent();
-            this.data = data;
-            this.carSelectedData = carSelectedData;
-            /*this.type = type;
-            this.model = model;
-            this.carID = carID;*/
+            data = new _291CarRental.database();
         }
 
         private void Reservation_Load(object sender, EventArgs e)
@@ -37,25 +32,26 @@ namespace WindowsFormsApp1
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-
+            RemoveRow removerow = new RemoveRow(this);
+            removerow.ShowDialog();
         }
 
         private void addRow_Click(object sender, EventArgs e)
         {
             //the two guid are for testing purpose
             Guid tempCar = new Guid();
-            data.myCommand.CommandText = "SELECT VehicleID from Car where Car.VehicleID = @carID";
-            data.myCommand.Parameters.AddWithValue("carID", carSelectedData[0]);
+            data.myCommand.CommandText = "SELECT VehicleID from Car where Car.[Type of Vehicle] =@Type and Car.Model =@Model";
+            data.myCommand.Parameters.AddWithValue("Type", "truck");
+            data.myCommand.Parameters.AddWithValue("Model", "F-150");
             tempCar = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
             Guid tempUser;
             data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
-            data.myCommand.Parameters.AddWithValue("user", data.usr);
+            data.myCommand.Parameters.AddWithValue("user", "AmyBillid");
             tempUser = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
             addRow addrow = new addRow(data, tempUser, tempCar, this);
             addrow.ShowDialog();
-            
         }
 
 

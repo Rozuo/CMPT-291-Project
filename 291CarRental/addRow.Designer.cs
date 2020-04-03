@@ -35,9 +35,9 @@
             this._291GroupProjectDataSet = new WindowsFormsApp1._291GroupProjectDataSet();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservationTableAdapter = new WindowsFormsApp1._291GroupProjectDataSetTableAdapters.ReservationTableAdapter();
-            this._291GroupProjectDataSet1 = new _291CarRental._291GroupProjectDataSet1();
+            this._291GroupProjectDataSet1 = new WindowsFormsApp1._291GroupProjectDataSet1();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carTableAdapter = new _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
+            this.carTableAdapter = new WindowsFormsApp1._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.locationB = new System.Windows.Forms.ComboBox();
             this.branchL = new System.Windows.Forms.Label();
@@ -47,6 +47,11 @@
             this.startDateL = new System.Windows.Forms.Label();
             this.priceResult = new System.Windows.Forms.Label();
             this.resultB = new System.Windows.Forms.Button();
+            this.extraFeeList = new System.Windows.Forms.ListBox();
+            this.addListB = new System.Windows.Forms.Button();
+            this.removeListB = new System.Windows.Forms.Button();
+            this.ExtraFeeCustomer = new System.Windows.Forms.ComboBox();
+            this.extraFeeAdmin = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet1)).BeginInit();
@@ -69,7 +74,7 @@
             this.confirmB.BackColor = System.Drawing.Color.Green;
             this.confirmB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmB.Location = new System.Drawing.Point(62, 309);
+            this.confirmB.Location = new System.Drawing.Point(50, 323);
             this.confirmB.Name = "confirmB";
             this.confirmB.Size = new System.Drawing.Size(107, 34);
             this.confirmB.TabIndex = 21;
@@ -82,7 +87,7 @@
             this.cancelB.BackColor = System.Drawing.Color.Firebrick;
             this.cancelB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelB.Location = new System.Drawing.Point(273, 309);
+            this.cancelB.Location = new System.Drawing.Point(261, 323);
             this.cancelB.Name = "cancelB";
             this.cancelB.Size = new System.Drawing.Size(107, 34);
             this.cancelB.TabIndex = 22;
@@ -127,7 +132,7 @@
             "RedDeer",
             "Vancouver",
             "Richmond"});
-            this.locationB.Location = new System.Drawing.Point(175, 113);
+            this.locationB.Location = new System.Drawing.Point(163, 89);
             this.locationB.Name = "locationB";
             this.locationB.Size = new System.Drawing.Size(121, 21);
             this.locationB.TabIndex = 17;
@@ -138,7 +143,7 @@
             this.branchL.AutoSize = true;
             this.branchL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branchL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.branchL.Location = new System.Drawing.Point(24, 111);
+            this.branchL.Location = new System.Drawing.Point(12, 87);
             this.branchL.Name = "branchL";
             this.branchL.Size = new System.Drawing.Size(145, 20);
             this.branchL.TabIndex = 13;
@@ -146,7 +151,7 @@
             // 
             // endTimePicker
             // 
-            this.endTimePicker.Location = new System.Drawing.Point(125, 74);
+            this.endTimePicker.Location = new System.Drawing.Point(124, 63);
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.Size = new System.Drawing.Size(200, 20);
             this.endTimePicker.TabIndex = 16;
@@ -156,7 +161,7 @@
             this.endDateL.AutoSize = true;
             this.endDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.endDateL.Location = new System.Drawing.Point(24, 72);
+            this.endDateL.Location = new System.Drawing.Point(23, 61);
             this.endDateL.Name = "endDateL";
             this.endDateL.Size = new System.Drawing.Size(95, 20);
             this.endDateL.TabIndex = 14;
@@ -164,7 +169,7 @@
             // 
             // startTimePicker
             // 
-            this.startTimePicker.Location = new System.Drawing.Point(125, 48);
+            this.startTimePicker.Location = new System.Drawing.Point(124, 37);
             this.startTimePicker.Name = "startTimePicker";
             this.startTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startTimePicker.TabIndex = 15;
@@ -174,7 +179,7 @@
             this.startDateL.AutoSize = true;
             this.startDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.startDateL.Location = new System.Drawing.Point(24, 48);
+            this.startDateL.Location = new System.Drawing.Point(23, 37);
             this.startDateL.Name = "startDateL";
             this.startDateL.Size = new System.Drawing.Size(95, 20);
             this.startDateL.TabIndex = 18;
@@ -185,16 +190,18 @@
             this.priceResult.AutoSize = true;
             this.priceResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceResult.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.priceResult.Location = new System.Drawing.Point(79, 219);
+            this.priceResult.Location = new System.Drawing.Point(158, 268);
             this.priceResult.Name = "priceResult";
-            this.priceResult.Size = new System.Drawing.Size(0, 25);
+            this.priceResult.Size = new System.Drawing.Size(84, 25);
             this.priceResult.TabIndex = 19;
+            this.priceResult.Text = "______";
+            this.priceResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.priceResult.Click += new System.EventHandler(this.priceResult_Click);
             // 
             // resultB
             // 
             this.resultB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultB.Location = new System.Drawing.Point(125, 159);
+            this.resultB.Location = new System.Drawing.Point(124, 225);
             this.resultB.Name = "resultB";
             this.resultB.Size = new System.Drawing.Size(160, 28);
             this.resultB.TabIndex = 23;
@@ -202,11 +209,71 @@
             this.resultB.UseVisualStyleBackColor = true;
             this.resultB.Click += new System.EventHandler(this.resultB_Click);
             // 
+            // extraFeeList
+            // 
+            this.extraFeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraFeeList.FormattingEnabled = true;
+            this.extraFeeList.ItemHeight = 20;
+            this.extraFeeList.Location = new System.Drawing.Point(12, 116);
+            this.extraFeeList.Name = "extraFeeList";
+            this.extraFeeList.Size = new System.Drawing.Size(322, 84);
+            this.extraFeeList.TabIndex = 24;
+            // 
+            // addListB
+            // 
+            this.addListB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addListB.Location = new System.Drawing.Point(340, 116);
+            this.addListB.Name = "addListB";
+            this.addListB.Size = new System.Drawing.Size(103, 28);
+            this.addListB.TabIndex = 25;
+            this.addListB.Text = "Add";
+            this.addListB.UseVisualStyleBackColor = true;
+            this.addListB.Click += new System.EventHandler(this.addListB_Click);
+            // 
+            // removeListB
+            // 
+            this.removeListB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeListB.Location = new System.Drawing.Point(340, 172);
+            this.removeListB.Name = "removeListB";
+            this.removeListB.Size = new System.Drawing.Size(103, 28);
+            this.removeListB.TabIndex = 26;
+            this.removeListB.Text = "Remove";
+            this.removeListB.UseVisualStyleBackColor = true;
+            // 
+            // ExtraFeeCustomer
+            // 
+            this.ExtraFeeCustomer.FormattingEnabled = true;
+            this.ExtraFeeCustomer.Items.AddRange(new object[] {
+            "Special Insurence",
+            "Oil Fee"});
+            this.ExtraFeeCustomer.Location = new System.Drawing.Point(330, 36);
+            this.ExtraFeeCustomer.Name = "ExtraFeeCustomer";
+            this.ExtraFeeCustomer.Size = new System.Drawing.Size(121, 21);
+            this.ExtraFeeCustomer.TabIndex = 27;
+            // 
+            // extraFeeAdmin
+            // 
+            this.extraFeeAdmin.FormattingEnabled = true;
+            this.extraFeeAdmin.Items.AddRange(new object[] {
+            "Late return",
+            "Special Insurance",
+            "Oil Fee",
+            "Different Location"});
+            this.extraFeeAdmin.Location = new System.Drawing.Point(330, 66);
+            this.extraFeeAdmin.Name = "extraFeeAdmin";
+            this.extraFeeAdmin.Size = new System.Drawing.Size(121, 21);
+            this.extraFeeAdmin.TabIndex = 28;
+            // 
             // addRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 375);
+            this.ClientSize = new System.Drawing.Size(455, 369);
+            this.Controls.Add(this.extraFeeAdmin);
+            this.Controls.Add(this.ExtraFeeCustomer);
+            this.Controls.Add(this.removeListB);
+            this.Controls.Add(this.addListB);
+            this.Controls.Add(this.extraFeeList);
             this.Controls.Add(this.resultB);
             this.Controls.Add(this.priceResult);
             this.Controls.Add(this.branchL);
@@ -239,9 +306,9 @@
         private _291GroupProjectDataSet _291GroupProjectDataSet;
         private System.Windows.Forms.BindingSource reservationBindingSource;
         private _291GroupProjectDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private _291CarRental._291GroupProjectDataSet1 _291GroupProjectDataSet1;
+        private _291GroupProjectDataSet1 _291GroupProjectDataSet1;
         private System.Windows.Forms.BindingSource carBindingSource;
-        private _291CarRental. _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
+        private _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
         private System.Windows.Forms.BindingSource carBindingSource1;
         private System.Windows.Forms.ComboBox locationB;
         private System.Windows.Forms.Label branchL;
@@ -251,5 +318,10 @@
         private System.Windows.Forms.Label startDateL;
         private System.Windows.Forms.Label priceResult;
         private System.Windows.Forms.Button resultB;
+        private System.Windows.Forms.ListBox extraFeeList;
+        private System.Windows.Forms.Button addListB;
+        private System.Windows.Forms.Button removeListB;
+        private System.Windows.Forms.ComboBox ExtraFeeCustomer;
+        private System.Windows.Forms.ComboBox extraFeeAdmin;
     }
 }

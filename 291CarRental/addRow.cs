@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         private Guid customerID;
         private Guid CarID;
         private Reservation theOpenResForm;
-
+        /*remember to change back the database into _291GroupProject.database*/
         public addRow(_291CarRental.database data, Guid customerID, Guid CarID, Reservation theOpenResForm)
         {
             InitializeComponent();
@@ -36,20 +36,7 @@ namespace WindowsFormsApp1
             /*add the information to the row*/
             data = new _291CarRental.database();
             /*search for the userID*/
-            Guid guid;
-            /*data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
-            data.myCommand.Parameters.AddWithValue("user", customerFName.Text);
-            try
-            {
-                guid = (Guid)data.myCommand.ExecuteScalar();
-                data.myCommand.Parameters.Clear();
-            }
-            catch
-            {
-                MessageBox.Show("User does not exist");
-            }*/
 
-            
             try
             {
                 Guid guidLocation;
@@ -72,13 +59,27 @@ namespace WindowsFormsApp1
                 data.myCommand.Parameters.AddWithValue("UserID", customerID);
                 data.myCommand.ExecuteNonQuery();
                 data.myCommand.Parameters.Clear();
-                //MessageBox.Show("Reservation added");
-                theOpenResForm.updateTable();
-                this.Close();
+
+                /*increment the customer's total year rent by 1*/
+                data.myCommand.CommandText =
+                    "UPDATE Users SET Users.[Total Year Rent] = Users.[Total Year Rent]+1" +
+                    "where Users.UserID =@user";
+                data.myCommand.Parameters.AddWithValue("user", this.customerID);
+                data.myCommand.ExecuteNonQuery();
+                data.myCommand.Parameters.Clear();
+                /*let the car becomes unavailable for other user*/
+                data.myCommand.CommandText =
+                    "UPDATE Car SET Car.Status = 1 where Car.VehicleID =@Vehicle";
+                data.myCommand.Parameters.AddWithValue("Vehicle", CarID);
+                data.myCommand.ExecuteNonQuery();
+                data.myCommand.Parameters.Clear();
             }
-             catch {
+            catch
+            {
                 MessageBox.Show("Please choose a city");
             }
+            theOpenResForm.updateTable();
+            this.Close();
         }
 
         private Decimal calPrice(Guid CarId, DateTimePicker starts, DateTimePicker ends)
@@ -89,22 +90,25 @@ namespace WindowsFormsApp1
             string CarType = data.myCommand.ExecuteScalar().ToString();//get the type of vehicle
             data.myCommand.Parameters.Clear();
 
-            data.myCommand.CommandText = 
+            data.myCommand.CommandText =
                 "SELECT [Daily Price] from CarType where CarType.[Type of Vehicle] =@CarType";
             data.myCommand.Parameters.AddWithValue("CarType", CarType);
             //count as 1 day even if the customer returns it the day they rent the car
-            int days = ((int)result.Days)+1;
+            int days = ((int)result.Days) + 1;
             int dayPrice = Decimal.ToInt32((decimal)data.myCommand.ExecuteScalar());
             data.myCommand.Parameters.Clear();
             Decimal totalPrice = 0;
-            if (days >= 7) {//apply the weekly discount
+            if (days >= 7)
+            {//apply the weekly discount
                 data.myCommand.CommandText =
                     "SELECT [Weekly Price] from CarType where CarType.[Type of Vehicle] =@CarType";
-                data.myCommand.Parameters.AddWithValue("CarType",CarType);
+                data.myCommand.Parameters.AddWithValue("CarType", CarType);
                 Decimal multiplier = (decimal)data.myCommand.ExecuteScalar();
                 totalPrice = days * dayPrice * multiplier;
                 data.myCommand.Parameters.Clear();
-            }else if(days >= 30){//apply the monthly discount
+            }
+            else if (days >= 30)
+            {//apply the monthly discount
                 data.myCommand.CommandText =
                     "SELECT [Monthly Price] from CarType where CarType.[Type of Vehicle] =@CarType";
                 data.myCommand.Parameters.AddWithValue("CarType", CarType);
@@ -116,10 +120,20 @@ namespace WindowsFormsApp1
             {//otherwise just calculate the price only
                 totalPrice = days * dayPrice;
             }
+            //check if the customer has gold membership
+            if (isGoldMembership(this.customerID)) totalPrice = totalPrice * ((Decimal)0.9);
             if (totalPrice < 0) totalPrice = 0;
             return totalPrice;
         }
 
+        private bool isGoldMembership(Guid UserId)
+        {
+            data.myCommand.CommandText = "SELECT [Total Year Rent] from Users where Users.UserId =@userId";
+            data.myCommand.Parameters.AddWithValue("userId", UserId);
+            int temp = Convert.ToInt32(data.myCommand.ExecuteScalar().ToString());
+            data.myCommand.Parameters.Clear();
+            return temp >= 3;
+        }
         private void startTimePicker_ValueChanged(object sender, EventArgs e)
         {
         }
@@ -155,7 +169,12 @@ namespace WindowsFormsApp1
         private void resultB_Click(object sender, EventArgs e)
         {
             priceResult.Text = "Your total price is: " + calPrice(this.CarID, startTimePicker, endTimePicker);
+            if (isGoldMembership(this.customerID)) priceResult.Text += "\nExtra 10% off on your Gold membership";
+        }
 
+        private void addListB_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
