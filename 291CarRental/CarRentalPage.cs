@@ -60,6 +60,26 @@ namespace Car_Renting_Software
             }
             WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab, dataString);
             reserve.ShowDialog();
+
+            try
+            {
+                if(reserve.username == null)
+                {
+                    return;
+                }
+            
+                cmd = "update Car set Status = @status, UserID = @userID where Car.VehicleID = @carID";
+                datab.myCommand.Parameters.AddWithValue("status", "1");
+                datab.myCommand.Parameters.AddWithValue("carID", dataString[0]);
+                datab.myCommand.Parameters.AddWithValue("userID", reserve.username);
+                datab.update(cmd);
+                datab.clearParameters();
+                this.carTableAdapter.Fill(this._291GroupProjectDataSetCar.Car);
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString());
+            }
             Close();
         }
 
@@ -296,11 +316,6 @@ namespace Car_Renting_Software
                 amountOfRows = CarData.SelectedRows.Count;
                 string[] columnHeaders = new string[CarData.Columns.Count];
 
-                /*
-                foreach (DataGridViewColumn theCol in CarData.SelectedColumns) 
-                {
-                    MessageBox.Show(theCol.HeaderText);
-                }*/
 
                 foreach (DataGridViewRow theRow in CarData.SelectedRows)
                 {

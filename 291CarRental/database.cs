@@ -73,6 +73,13 @@ namespace _291CarRental
             myReader = myCommand.ExecuteReader();
         }
 
+        public void update(string command)
+        {
+            myCommand.CommandText = command;
+            MessageBox.Show(myCommand.CommandText);
+            myCommand.ExecuteNonQuery();
+        }
+
         public void clearParameters()
         {
             myCommand.Parameters.Clear();

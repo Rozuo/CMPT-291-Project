@@ -67,6 +67,18 @@
     <Compile Include="addRow.Designer.cs">
       <DependentUpon>addRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLandingPage.Designer.cs">
+      <DependentUpon>AdminLandingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="currentRentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="currentRentals.Designer.cs">
+      <DependentUpon>currentRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="database.cs" />
     <Compile Include="clientLandingPage.cs">
       <SubType>Form</SubType>
@@ -79,6 +91,12 @@
     </Compile>
     <Compile Include="CarRentalPage.Designer.cs">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessReturns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessReturns.Designer.cs">
+      <DependentUpon>ProcessReturns.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -100,10 +118,12 @@
     <Compile Include="RegisterClient.Designer.cs">
       <DependentUpon>RegisterClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveRow.cs">
+    <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveRow.Designer.cs" />
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +148,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="_291GroupProjectDataSetReservation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addRow.resx">
       <DependentUpon>addRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLandingPage.resx">
+      <DependentUpon>AdminLandingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clientLandingPage.resx">
       <DependentUpon>clientLandingPage.cs</DependentUpon>
@@ -137,8 +165,14 @@
     <EmbeddedResource Include="CarRentalPage.resx">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="currentRentals.resx">
+      <DependentUpon>currentRentals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessReturns.resx">
+      <DependentUpon>ProcessReturns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -157,6 +191,9 @@
       <DependentUpon>RegisterClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RemoveRow.resx" />
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +238,17 @@
     </None>
     <None Include="_291GroupProjectDataSetCar.xss">
       <DependentUpon>_291GroupProjectDataSetCar.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xsc">
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_291GroupProjectDataSetReservation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_291GroupProjectDataSetReservation.xss">
+      <DependentUpon>_291GroupProjectDataSetReservation.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -36,3 +36,7 @@ C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.addRow.resour
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.Reservation.resources
 C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Profile.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.currentRentals.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Report.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.AdminLandingPage.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.ProcessReturns.resources

@@ -13,15 +13,16 @@ namespace WindowsFormsApp1
     public partial class addRow : Form
     {
         private _291CarRental.database data;
+        private string username;
         private Guid customerID;
         private Guid CarID;
         private Reservation theOpenResForm;
-        /*remember to change back the database into _291GroupProject.database*/
-        public addRow(_291CarRental.database data, Guid customerID, Guid CarID, Reservation theOpenResForm)
+
+        public addRow(_291CarRental.database data,  Guid CarID, Reservation theOpenResForm)
         {
             InitializeComponent();
             this.data = data;
-            this.customerID = customerID;
+            //this.customerID = customerID;
             this.CarID = CarID;
             this.theOpenResForm = theOpenResForm;
         }
@@ -39,6 +40,10 @@ namespace WindowsFormsApp1
 
             try
             {
+                data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
+                data.myCommand.Parameters.AddWithValue("user", username);
+                customerID = (Guid)data.myCommand.ExecuteScalar();
+                data.myCommand.Parameters.Clear();
                 Guid guidLocation;
                 data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
                 data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
@@ -175,6 +180,15 @@ namespace WindowsFormsApp1
         private void addListB_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void usernameBox_TextChanged(object sender, EventArgs e)
+        {
+            username = usernameBox.Text;
+        }
+        public string getUsername()
+        {
+            return username;
         }
     }
 }

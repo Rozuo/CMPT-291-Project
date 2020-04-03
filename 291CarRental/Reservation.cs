@@ -13,7 +13,9 @@ namespace WindowsFormsApp1
     public partial class Reservation : Form
     {
         public _291CarRental.database data;
-        public Reservation()
+        public string username;
+        string[] carSelectedData;
+        public Reservation(_291CarRental.database data, string[] carSelectedData)
         {
             InitializeComponent();
             data = new _291CarRental.database();
@@ -46,12 +48,17 @@ namespace WindowsFormsApp1
             tempCar = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
             Guid tempUser;
+            /*
             data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
             data.myCommand.Parameters.AddWithValue("user", "AmyBillid");
             tempUser = (Guid)data.myCommand.ExecuteScalar();
+            */
             data.myCommand.Parameters.Clear();
-            addRow addrow = new addRow(data, tempUser, tempCar, this);
+            addRow addrow = new addRow(data, tempCar, this);
             addrow.ShowDialog();
+
+            username = addrow.getUsername();
+
         }
 
 
