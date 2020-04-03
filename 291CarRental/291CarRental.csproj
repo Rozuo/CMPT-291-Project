@@ -67,6 +67,12 @@
     <Compile Include="addRow.Designer.cs">
       <DependentUpon>addRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLandingPage.Designer.cs">
+      <DependentUpon>AdminLandingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="currentRentals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     </Compile>
     <Compile Include="CarRentalPage.Designer.cs">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessRentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessRentals.Designer.cs">
+      <DependentUpon>ProcessRentals.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <EmbeddedResource Include="addRow.resx">
       <DependentUpon>addRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminLandingPage.resx">
+      <DependentUpon>AdminLandingPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="clientLandingPage.resx">
       <DependentUpon>clientLandingPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessRentals.resx">
+      <DependentUpon>ProcessRentals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>

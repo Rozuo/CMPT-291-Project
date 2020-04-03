@@ -45,7 +45,7 @@ namespace _291CarRental
                  * The following parameter block denies SQL injection, by splitting the input into parameters, which will account for random apostrophes '
                  */
                 datab.myCommand.CommandText = "Select role from Users Where username=@User " + "and password=@Pass;";
-                datab.myCommand.Parameters.AddWithValue("User", username.Text);
+                datab.myCommand.Parameters.AddWithValue("User", username.Text.ToUpper());
                 datab.myCommand.Parameters.AddWithValue("Pass", password.Text);
 
 
@@ -56,23 +56,26 @@ namespace _291CarRental
                 datab.myCommand.Parameters.Clear();
                 if (dt.Rows.Count == 1)
                 {
-                    switch (dt.Rows[0]["Role"] as string)
+                    switch (dt.Rows[0]["role"] as string)
                     {
                         /*
                          * This switch statement controls which forms are shown to the user depending on whether their role in the database is a "Client" or an "Admin". There is a default
                          * case included just in case an unexpected role is encountered.
                          */
-                        case "Admin":
+                        case "admin":
                             {
                                 /*
                                  * Admin form flow handled here
                                  */
                                 this.Hide();
-                                MessageBox.Show("This is an Admin", "ADMIN");
+                                //MessageBox.Show("This is an Admin", "ADMIN");
+                                AdminLandingPage ALP = new AdminLandingPage(datab);
+                                ALP.ShowDialog();
+                                Application.Exit();
                                 break;
                             }
 
-                        case "Client":
+                        case "client":
                             {
                                 /*
                                  * Client form flow handled here
