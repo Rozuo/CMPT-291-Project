@@ -26,7 +26,8 @@ namespace _291CarRental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=T" +
+            "rue")]
         public string _291GroupProjectConnectionString {
             get {
                 return ((string)(this["_291GroupProjectConnectionString"]));
@@ -36,7 +37,8 @@ namespace _291CarRental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=T" +
+            "rue")]
         public string _291GroupProjectDataSet {
             get {
                 return ((string)(this["_291GroupProjectDataSet"]));
@@ -56,7 +58,8 @@ namespace _291CarRental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=T" +
+            "rue")]
         public string _291GroupProjectConnectionString1 {
             get {
                 return ((string)(this["_291GroupProjectConnectionString1"]));

@@ -12,7 +12,7 @@ namespace _291CarRental
 {
     public partial class clientLandingPage : Form
     {
-        private database datab;
+        public database datab;
         private string user;
         public clientLandingPage(database temp)
         {

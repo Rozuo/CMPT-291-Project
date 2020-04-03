@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_291GroupProjectConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_291GroupProjectConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings._291CarRental.Properties.Settings.GlobalReference.Default._291GroupProjectConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_291GroupProjectConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="_291GroupProjectConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings._291CarRental.Properties.Settings.GlobalReference.Default._291GroupProjectConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CarTableAdapter" GeneratorDataComponentClassName="CarTableAdapter" Name="Car" UserDataComponentName="CarTableAdapter">
@@ -98,7 +98,7 @@ SELECT VehicleID, Color, Model, Make, Status, [Type of Vehicle], UserID FROM Car
   <xs:element name="_291GroupProjectDataSetCar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_291GroupProjectDataSetCar" msprop:Generator_UserDSName="_291GroupProjectDataSetCar">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_RowClassName="CarRow" msprop:Generator_UserTableName="Car" msprop:Generator_RowEvArgName="CarRowChangeEvent">
+        <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_UserTableName="Car" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_RowEvArgName="CarRowChangeEvent" msprop:Generator_RowClassName="CarRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VehicleID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnVehicleID" msprop:Generator_ColumnPropNameInRow="VehicleID" msprop:Generator_ColumnPropNameInTable="VehicleIDColumn" msprop:Generator_UserColumnName="VehicleID" type="xs:string" />

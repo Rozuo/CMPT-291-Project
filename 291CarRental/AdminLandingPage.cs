@@ -12,7 +12,7 @@ namespace _291CarRental
 {
     public partial class AdminLandingPage : Form
     {
-        private database data;
+        public database data;
         public AdminLandingPage(database data)
         {
             InitializeComponent();

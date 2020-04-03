@@ -38,8 +38,8 @@ namespace _291CarRental
              * datab will have all the necessary information for the connection, what it does not handle is user input for either query commands or inserting
              */
             
-            try
-            {
+            //try
+            //{
                 datab = new database(username.Text);
                 /*
                  * The following parameter block denies SQL injection, by splitting the input into parameters, which will account for random apostrophes '
@@ -101,12 +101,13 @@ namespace _291CarRental
 
                     //Application.Exit();
                 }
-            }
-            catch
-            {
-                MessageBox.Show("An error has been encountered. Please try again", "ERROR");
-            }
+            //}
+            //catch
+            //{
+                //MessageBox.Show("An error has been encountered. Please try again", "ERROR");
+            //}
         }
+    
 
         private void ExitButton_Click(object sender, EventArgs e)
         {

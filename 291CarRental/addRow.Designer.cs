@@ -35,9 +35,9 @@
             this._291GroupProjectDataSet = new WindowsFormsApp1._291GroupProjectDataSet();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservationTableAdapter = new WindowsFormsApp1._291GroupProjectDataSetTableAdapters.ReservationTableAdapter();
-            this._291GroupProjectDataSet1 = new _291CarRental._291GroupProjectDataSet1();
+            this._291GroupProjectDataSet1 = new WindowsFormsApp1._291GroupProjectDataSet1();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carTableAdapter = new _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
+            this.carTableAdapter = new _291GroupProjectDataSet1TableAdapters.CarTableAdapter();
             this.locationB = new System.Windows.Forms.ComboBox();
             this.branchL = new System.Windows.Forms.Label();
             this.endTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -72,7 +72,7 @@
             this.confirmB.BackColor = System.Drawing.Color.Green;
             this.confirmB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmB.Location = new System.Drawing.Point(62, 309);
+            this.confirmB.Location = new System.Drawing.Point(50, 323);
             this.confirmB.Name = "confirmB";
             this.confirmB.Size = new System.Drawing.Size(107, 34);
             this.confirmB.TabIndex = 21;
@@ -85,7 +85,7 @@
             this.cancelB.BackColor = System.Drawing.Color.Firebrick;
             this.cancelB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelB.Location = new System.Drawing.Point(273, 309);
+            this.cancelB.Location = new System.Drawing.Point(261, 323);
             this.cancelB.Name = "cancelB";
             this.cancelB.Size = new System.Drawing.Size(107, 34);
             this.cancelB.TabIndex = 22;
@@ -190,8 +190,10 @@
             this.priceResult.ForeColor = System.Drawing.SystemColors.WindowText;
             this.priceResult.Location = new System.Drawing.Point(95, 249);
             this.priceResult.Name = "priceResult";
-            this.priceResult.Size = new System.Drawing.Size(0, 25);
+            this.priceResult.Size = new System.Drawing.Size(84, 25);
             this.priceResult.TabIndex = 19;
+            this.priceResult.Text = "______";
+            this.priceResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.priceResult.Click += new System.EventHandler(this.priceResult_Click);
             // 
             // resultB
@@ -264,9 +266,9 @@
         private _291GroupProjectDataSet _291GroupProjectDataSet;
         private System.Windows.Forms.BindingSource reservationBindingSource;
         private _291GroupProjectDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private _291CarRental._291GroupProjectDataSet1 _291GroupProjectDataSet1;
+        private _291GroupProjectDataSet1 _291GroupProjectDataSet1;
         private System.Windows.Forms.BindingSource carBindingSource;
-        private _291CarRental. _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
+        private _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
         private System.Windows.Forms.BindingSource carBindingSource1;
         private System.Windows.Forms.ComboBox locationB;
         private System.Windows.Forms.Label branchL;

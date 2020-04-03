@@ -10,45 +10,35 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class addRow : Form
+    public partial class addRowCustomer : Form
     {
-        private _291CarRental.database data;
-        private string username;
+        private database data;
         private Guid customerID;
         private Guid CarID;
-        private Reservation theOpenResForm;
-
-        public addRow(_291CarRental.database data,  Guid CarID, Reservation theOpenResForm)
+        private ReservationCustomer theOpenResForm;
+        /*remember to change back the database into _291GroupProject.database*/
+        public addRowCustomer(database data, Guid customerID, Guid CarID, ReservationCustomer theOpenResForm)
         {
             InitializeComponent();
             this.data = data;
-            //extract the userid for later use
-            data.myCommand.CommandText = "SELECT UserID from Users where Users.username = @uname";
-            data.myCommand.Parameters.AddWithValue("uname", data.usr);
-            customerID = (Guid)data.myCommand.ExecuteScalar();
-            data.myCommand.Parameters.Clear();
-            //this.customerID = customerID;
+            this.customerID = customerID;
             this.CarID = CarID;
             this.theOpenResForm = theOpenResForm;
         }
 
-        private void cancelB_Click(object sender, EventArgs e)
+        private void cancelB_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void confirmB_Click(object sender, EventArgs e)
+        private void confirmB_Click_1(object sender, EventArgs e)
         {
             /*add the information to the row*/
-            //data = new _291CarRental.database();
+            data = new database();
             /*search for the userID*/
 
             try
             {
-                data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
-                data.myCommand.Parameters.AddWithValue("user", username);
-                customerID = (Guid)data.myCommand.ExecuteScalar();
-                data.myCommand.Parameters.Clear();
                 Guid guidLocation;
                 data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
                 data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
@@ -176,7 +166,7 @@ namespace WindowsFormsApp1
         {
         }
 
-        private void resultB_Click(object sender, EventArgs e)
+        private void resultB_Click_1(object sender, EventArgs e)
         {
             priceResult.Text = "Your total price is: " + calPrice(this.CarID, startTimePicker, endTimePicker);
             if (isGoldMembership(this.customerID)) priceResult.Text += "\nExtra 10% off on your Gold membership";
@@ -184,16 +174,12 @@ namespace WindowsFormsApp1
 
         private void addListB_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void usernameBox_TextChanged(object sender, EventArgs e)
+        private void priceResult_Click_1(object sender, EventArgs e)
         {
-            username = usernameBox.Text;
-        }
-        public string getUsername()
-        {
-            return username;
+
         }
     }
 }

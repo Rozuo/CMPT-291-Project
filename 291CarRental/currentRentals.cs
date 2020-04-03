@@ -16,7 +16,7 @@ namespace _291CarRental
         private int theSelectedRow;
         private int amountOfRows;
         private string[] dataString;
-        private database data;
+        public database data;
 
         public currentRentals(database data)
         {
