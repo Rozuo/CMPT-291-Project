@@ -18,6 +18,7 @@ namespace Car_Renting_Software
         private string type;
         private string color;
         private string carID;
+        private string[] dataString;
         private int    availableCarsOnly = 0;
 
         private int theSelectedRow;
@@ -42,6 +43,7 @@ namespace Car_Renting_Software
             dataCommand = new SqlCommand();
             dataCommand.Connection = dataConnection;
             */
+            dataString = new string[CarData.Columns.Count];
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -51,8 +53,12 @@ namespace Car_Renting_Software
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            
-            WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab);
+            if (!dataString[dataString.Length-1].Equals("") || !dataString[4].Equals("0"))
+            {
+                MessageBox.Show("This car is taken or is under repairs. Select another one.");
+                return;
+            }
+            WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab, dataString);
             reserve.ShowDialog();
             Close();
         }
@@ -283,31 +289,55 @@ namespace Car_Renting_Software
 
         private void CarData_CellClick_2(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("The row index" + e.RowIndex);
             if (e.RowIndex != -1)
             {
                 CarInfoBox.Clear();
                 theSelectedRow = e.RowIndex;
                 amountOfRows = CarData.SelectedRows.Count;
-                String[] dataString = new String[CarData.Columns.Count];
+                string[] columnHeaders = new string[CarData.Columns.Count];
+
+                /*
+                foreach (DataGridViewColumn theCol in CarData.SelectedColumns) 
+                {
+                    MessageBox.Show(theCol.HeaderText);
+                }*/
 
                 foreach (DataGridViewRow theRow in CarData.SelectedRows)
                 {
                     for (int i = 0; i < dataString.Length; i++)
                     {
                         dataString[i] = theRow.Cells[i].Value.ToString();
+                        columnHeaders[i] = CarData.Columns[i].HeaderText;
                     }
                 }
-                MessageBox.Show("theRow = " + dataString[1]);
 
                 for (int i = 0; i < dataString.Length; i++)
                 {
-                    CarInfoBox.Text = CarInfoBox.Text + dataString[i] + "\n";
+                    if(dataString[i].Equals(""))
+                    {
+                        //CarInfoBox.Text += "Car Status: " + "AVAILABLE" + "\n";
+                        continue;
+                    }
+                    else if (columnHeaders[i].Equals("Status"))
+                    {
+                        switch (dataString[i])
+                        {
+                            case ("0"):
+                                CarInfoBox.Text += columnHeaders[i] + ": AVAILABLE\n";
+                                break;
+                            case ("1"):
+                                CarInfoBox.Text += columnHeaders[i] + ": IN USE\n";
+                                break;
+                            case ("2"):
+                                CarInfoBox.Text += columnHeaders[i] + ": UNDER REPAIRS\n";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        CarInfoBox.Text += columnHeaders[i] + ": " + dataString[i] + "\n";
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("uh oh raggy you're a beater (baddy)");
             }
         }
     }

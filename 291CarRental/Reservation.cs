@@ -13,11 +13,15 @@ namespace WindowsFormsApp1
     public partial class Reservation : Form
     {
         public _291CarRental.database data;
-        public Reservation(_291CarRental.database data)
+        string[] carSelectedData;
+        public Reservation(_291CarRental.database data, string[] carSelectedData)
         {
             InitializeComponent();
             this.data = data;
-            
+            this.carSelectedData = carSelectedData;
+            /*this.type = type;
+            this.model = model;
+            this.carID = carID;*/
         }
 
         private void Reservation_Load(object sender, EventArgs e)
@@ -40,9 +44,8 @@ namespace WindowsFormsApp1
         {
             //the two guid are for testing purpose
             Guid tempCar = new Guid();
-            data.myCommand.CommandText = "SELECT VehicleID from Car where Car.[Type of Vehicle] =@Type and Car.Model =@Model";
-            data.myCommand.Parameters.AddWithValue("Type", "truck");
-            data.myCommand.Parameters.AddWithValue("Model", "F-150");
+            data.myCommand.CommandText = "SELECT VehicleID from Car where Car.VehicleID = @carID";
+            data.myCommand.Parameters.AddWithValue("carID", carSelectedData[0]);
             tempCar = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
             Guid tempUser;

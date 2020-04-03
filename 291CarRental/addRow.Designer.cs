@@ -39,8 +39,6 @@
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carTableAdapter = new _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerFName = new System.Windows.Forms.TextBox();
-            this.customerL = new System.Windows.Forms.Label();
             this.locationB = new System.Windows.Forms.ComboBox();
             this.branchL = new System.Windows.Forms.Label();
             this.endTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -71,7 +69,7 @@
             this.confirmB.BackColor = System.Drawing.Color.Green;
             this.confirmB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmB.Location = new System.Drawing.Point(61, 376);
+            this.confirmB.Location = new System.Drawing.Point(62, 309);
             this.confirmB.Name = "confirmB";
             this.confirmB.Size = new System.Drawing.Size(107, 34);
             this.confirmB.TabIndex = 21;
@@ -84,7 +82,7 @@
             this.cancelB.BackColor = System.Drawing.Color.Firebrick;
             this.cancelB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelB.Location = new System.Drawing.Point(272, 376);
+            this.cancelB.Location = new System.Drawing.Point(273, 309);
             this.cancelB.Name = "cancelB";
             this.cancelB.Size = new System.Drawing.Size(107, 34);
             this.cancelB.TabIndex = 22;
@@ -120,29 +118,6 @@
             // 
             this.carTableAdapter.ClearBeforeFill = true;
             // 
-            // customerFName
-            // 
-            this.customerFName.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.customerFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerFName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.customerFName.Location = new System.Drawing.Point(152, 49);
-            this.customerFName.Name = "customerFName";
-            this.customerFName.Size = new System.Drawing.Size(121, 26);
-            this.customerFName.TabIndex = 12;
-            this.customerFName.Text = "First Name";
-            this.customerFName.TextChanged += new System.EventHandler(this.customerFName_TextChanged);
-            // 
-            // customerL
-            // 
-            this.customerL.AutoSize = true;
-            this.customerL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerL.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.customerL.Location = new System.Drawing.Point(18, 52);
-            this.customerL.Name = "customerL";
-            this.customerL.Size = new System.Drawing.Size(128, 20);
-            this.customerL.TabIndex = 5;
-            this.customerL.Text = "Customer Info:";
-            // 
             // locationB
             // 
             this.locationB.FormattingEnabled = true;
@@ -152,7 +127,7 @@
             "RedDeer",
             "Vancouver",
             "Richmond"});
-            this.locationB.Location = new System.Drawing.Point(163, 176);
+            this.locationB.Location = new System.Drawing.Point(175, 113);
             this.locationB.Name = "locationB";
             this.locationB.Size = new System.Drawing.Size(121, 21);
             this.locationB.TabIndex = 17;
@@ -163,7 +138,7 @@
             this.branchL.AutoSize = true;
             this.branchL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branchL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.branchL.Location = new System.Drawing.Point(12, 174);
+            this.branchL.Location = new System.Drawing.Point(24, 111);
             this.branchL.Name = "branchL";
             this.branchL.Size = new System.Drawing.Size(145, 20);
             this.branchL.TabIndex = 13;
@@ -171,7 +146,7 @@
             // 
             // endTimePicker
             // 
-            this.endTimePicker.Location = new System.Drawing.Point(124, 116);
+            this.endTimePicker.Location = new System.Drawing.Point(125, 74);
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.Size = new System.Drawing.Size(200, 20);
             this.endTimePicker.TabIndex = 16;
@@ -181,7 +156,7 @@
             this.endDateL.AutoSize = true;
             this.endDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.endDateL.Location = new System.Drawing.Point(23, 114);
+            this.endDateL.Location = new System.Drawing.Point(24, 72);
             this.endDateL.Name = "endDateL";
             this.endDateL.Size = new System.Drawing.Size(95, 20);
             this.endDateL.TabIndex = 14;
@@ -189,7 +164,7 @@
             // 
             // startTimePicker
             // 
-            this.startTimePicker.Location = new System.Drawing.Point(124, 90);
+            this.startTimePicker.Location = new System.Drawing.Point(125, 48);
             this.startTimePicker.Name = "startTimePicker";
             this.startTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startTimePicker.TabIndex = 15;
@@ -199,7 +174,7 @@
             this.startDateL.AutoSize = true;
             this.startDateL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateL.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.startDateL.Location = new System.Drawing.Point(23, 90);
+            this.startDateL.Location = new System.Drawing.Point(24, 48);
             this.startDateL.Name = "startDateL";
             this.startDateL.Size = new System.Drawing.Size(95, 20);
             this.startDateL.TabIndex = 18;
@@ -210,7 +185,7 @@
             this.priceResult.AutoSize = true;
             this.priceResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceResult.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.priceResult.Location = new System.Drawing.Point(119, 287);
+            this.priceResult.Location = new System.Drawing.Point(79, 219);
             this.priceResult.Name = "priceResult";
             this.priceResult.Size = new System.Drawing.Size(0, 25);
             this.priceResult.TabIndex = 19;
@@ -219,7 +194,7 @@
             // resultB
             // 
             this.resultB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultB.Location = new System.Drawing.Point(124, 226);
+            this.resultB.Location = new System.Drawing.Point(125, 159);
             this.resultB.Name = "resultB";
             this.resultB.Size = new System.Drawing.Size(160, 28);
             this.resultB.TabIndex = 23;
@@ -231,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 422);
+            this.ClientSize = new System.Drawing.Size(455, 375);
             this.Controls.Add(this.resultB);
             this.Controls.Add(this.priceResult);
             this.Controls.Add(this.branchL);
@@ -243,8 +218,6 @@
             this.Controls.Add(this.endDateL);
             this.Controls.Add(this.title);
             this.Controls.Add(this.endTimePicker);
-            this.Controls.Add(this.customerFName);
-            this.Controls.Add(this.customerL);
             this.Name = "addRow";
             this.Text = "addRow";
             this.Load += new System.EventHandler(this.addRow_Load);
@@ -270,8 +243,6 @@
         private System.Windows.Forms.BindingSource carBindingSource;
         private _291CarRental. _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
         private System.Windows.Forms.BindingSource carBindingSource1;
-        private System.Windows.Forms.TextBox customerFName;
-        private System.Windows.Forms.Label customerL;
         private System.Windows.Forms.ComboBox locationB;
         private System.Windows.Forms.Label branchL;
         private System.Windows.Forms.DateTimePicker endTimePicker;

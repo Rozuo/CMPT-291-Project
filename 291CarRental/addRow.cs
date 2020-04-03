@@ -73,13 +73,12 @@ namespace WindowsFormsApp1
                 data.myCommand.ExecuteNonQuery();
                 data.myCommand.Parameters.Clear();
                 //MessageBox.Show("Reservation added");
-                
+                theOpenResForm.updateTable();
+                this.Close();
             }
              catch {
                 MessageBox.Show("Please choose a city");
             }
-            theOpenResForm.updateTable();
-            this.Close();
         }
 
         private Decimal calPrice(Guid CarId, DateTimePicker starts, DateTimePicker ends)
