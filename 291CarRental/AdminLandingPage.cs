@@ -43,5 +43,11 @@ namespace _291CarRental
             ProcessReturns returs = new ProcessReturns(data);
             returs.ShowDialog();
         }
+
+        private void addVehicleButton_Click(object sender, EventArgs e)
+        {
+            addVehicle add = new addVehicle(data);
+            add.ShowDialog();
+        }
     }
 }

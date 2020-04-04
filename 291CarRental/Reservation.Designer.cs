@@ -42,13 +42,13 @@
             this._291GroupProjectDataSet2 = new WindowsFormsApp1._291GroupProjectDataSet();
             this.dataPage = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSet)).BeginInit();
@@ -104,6 +104,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuButton1
             // 
@@ -172,35 +173,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(772, 310);
             this.dataGridView1.TabIndex = 0;
             // 
-            // UserID
+            // reservationIDDataGridViewTextBoxColumn
             // 
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
-            // 
-            // VehicleID
-            // 
-            this.VehicleID.DataPropertyName = "VehicleID";
-            this.VehicleID.HeaderText = "VehicleID";
-            this.VehicleID.Name = "VehicleID";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "BranchID";
-            this.Column1.HeaderText = "BranchID";
-            this.Column1.Name = "Column1";
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total Price";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price";
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "End date";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "End date";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
             // 
             // startDateDataGridViewTextBoxColumn
             // 
@@ -208,11 +185,35 @@
             this.startDateDataGridViewTextBoxColumn.HeaderText = "Start date";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
             // 
-            // reservationIDDataGridViewTextBoxColumn
+            // endDateDataGridViewTextBoxColumn
             // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "ReservationID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "ReservationID";
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "End date";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "End date";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // totalPriceDataGridViewTextBoxColumn
+            // 
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total Price";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price";
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "BranchID";
+            this.Column1.HeaderText = "BranchID";
+            this.Column1.Name = "Column1";
+            // 
+            // VehicleID
+            // 
+            this.VehicleID.DataPropertyName = "VehicleID";
+            this.VehicleID.HeaderText = "VehicleID";
+            this.VehicleID.Name = "VehicleID";
+            // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "UserID";
+            this.UserID.HeaderText = "UserID";
+            this.UserID.Name = "UserID";
             // 
             // tabControl
             // 

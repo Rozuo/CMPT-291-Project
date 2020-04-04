@@ -85,5 +85,10 @@ namespace WindowsFormsApp1
             data.myConnection.Open();*/
             reservationTableAdapter.Fill(_291GroupProjectDataSet.Reservation);
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

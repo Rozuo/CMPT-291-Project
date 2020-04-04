@@ -22,3 +22,15 @@ C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\Windows
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.addRow.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Reservation.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
