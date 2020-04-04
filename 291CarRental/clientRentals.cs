@@ -14,6 +14,8 @@ namespace _291CarRental
     {
         private database data;
         private string cmd;
+        private int rowIndex;
+        private DataGridViewRow row;
         public clientRentals(database data)
         {
             InitializeComponent();
@@ -23,9 +25,13 @@ namespace _291CarRental
         private void clientRentals_Load(object sender, EventArgs e)
         {
             cmd = "Select UserID from users where users.username = @theUsername";
+            data.myCommand.CommandText = cmd;
+            data.myCommand.Parameters.AddWithValue("theUsername", data.usr);
+            Guid user = (Guid) data.myCommand.ExecuteScalar();
+            data.clearParameters();
 
             cmd = "Select * from Reservation where Reservation.UserID = @username";
-            data.myCommand.Parameters.AddWithValue("username", new Guid(data.usr));
+            data.myCommand.Parameters.AddWithValue("username", user.ToString());
             try
             {
                 data.query(cmd);
@@ -57,9 +63,21 @@ namespace _291CarRental
 
         }
 
-        private void reservationData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reservationData.Rows.Remove(row);
+        }
+
+        private void reservationData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            row = reservationData.Rows[e.RowIndex];
         }
     }
 }

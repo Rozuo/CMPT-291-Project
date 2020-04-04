@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.reservationData = new System.Windows.Forms.DataGridView();
-            this._291GroupProjectDataSetReservation = new _291CarRental._291GroupProjectDataSetReservation();
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationTableAdapter = new _291CarRental._291GroupProjectDataSetReservationTableAdapters.ReservationTableAdapter();
             this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +38,14 @@
             this.branchIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehicleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._291GroupProjectDataSetReservation = new _291CarRental._291GroupProjectDataSetReservation();
+            this.reservationTableAdapter = new _291CarRental._291GroupProjectDataSetReservationTableAdapters.ReservationTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reservationData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSetReservation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSetReservation)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,21 +78,7 @@
             this.reservationData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reservationData.Size = new System.Drawing.Size(776, 255);
             this.reservationData.TabIndex = 1;
-            this.reservationData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationData_CellContentClick);
-            // 
-            // _291GroupProjectDataSetReservation
-            // 
-            this._291GroupProjectDataSetReservation.DataSetName = "_291GroupProjectDataSetReservation";
-            this._291GroupProjectDataSetReservation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reservationBindingSource
-            // 
-            this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this._291GroupProjectDataSetReservation;
-            // 
-            // reservationTableAdapter
-            // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
+            this.reservationData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationData_CellClick);
             // 
             // reservationIDDataGridViewTextBoxColumn
             // 
@@ -144,6 +130,20 @@
             this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.userIDDataGridViewTextBoxColumn.Visible = false;
             // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataMember = "Reservation";
+            this.reservationBindingSource.DataSource = this._291GroupProjectDataSetReservation;
+            // 
+            // _291GroupProjectDataSetReservation
+            // 
+            this._291GroupProjectDataSetReservation.DataSetName = "_291GroupProjectDataSetReservation";
+            this._291GroupProjectDataSetReservation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(460, 352);
@@ -152,6 +152,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // backButton
             // 
@@ -161,6 +162,7 @@
             this.backButton.TabIndex = 3;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // clientRentals
             // 
@@ -176,8 +178,8 @@
             this.Text = "clientRentals";
             this.Load += new System.EventHandler(this.clientRentals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reservationData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSetReservation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._291GroupProjectDataSetReservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

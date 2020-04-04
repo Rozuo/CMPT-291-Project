@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.data = data;
+            this.carSelectedData = carSelectedData;
         }
 
         private void Reservation_Load(object sender, EventArgs e)
@@ -43,8 +44,8 @@ namespace WindowsFormsApp1
             //the two guid are for testing purpose
             Guid tempCar = new Guid();
             data.myCommand.CommandText = "SELECT VehicleID from Car where Car.[Type of Vehicle] =@Type and Car.Model =@Model";
-            data.myCommand.Parameters.AddWithValue("Type", "truck");
-            data.myCommand.Parameters.AddWithValue("Model", "F-150");
+            data.myCommand.Parameters.AddWithValue("Type", carSelectedData[5]);
+            data.myCommand.Parameters.AddWithValue("Model", carSelectedData[2]);
             tempCar = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
             Guid tempUser;
