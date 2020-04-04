@@ -23,7 +23,7 @@ namespace Car_Renting_Software
 
         private SqlDataReader dataRead;
         private SqlCommand dataCommand;
-        private SqlConnection dataConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
+        private SqlConnection dataConnection = new SqlConnection(@"Data Source=DESKTOP-9JM8HEJ;Initial Catalog = 291GroupProject;Integrated Security = True");
 
         public Form4()
         {

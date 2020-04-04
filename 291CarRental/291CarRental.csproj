@@ -79,6 +79,12 @@
     <Compile Include="AdminLandingPage.Designer.cs">
       <DependentUpon>AdminLandingPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarRentalPageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarRentalPageCustomer.Designer.cs">
+      <DependentUpon>CarRentalPageCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="currentRentals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLandingPage.resx">
       <DependentUpon>AdminLandingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarRentalPageCustomer.resx">
+      <DependentUpon>CarRentalPageCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clientLandingPage.resx">
       <DependentUpon>clientLandingPage.cs</DependentUpon>

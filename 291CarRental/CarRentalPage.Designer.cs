@@ -133,6 +133,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(642, 154);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // availableCheckBox
             // 
@@ -184,6 +185,7 @@
             this.CarData.Size = new System.Drawing.Size(907, 368);
             this.CarData.TabIndex = 20;
             this.CarData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarData_CellClick_2);
+            this.CarData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarData_CellContentClick);
             // 
             // vehicleIDDataGridViewTextBoxColumn
             // 
@@ -313,6 +315,7 @@
             this.CarInfoBox.Size = new System.Drawing.Size(314, 331);
             this.CarInfoBox.TabIndex = 26;
             this.CarInfoBox.Text = "";
+            this.CarInfoBox.TextChanged += new System.EventHandler(this.CarInfoBox_TextChanged);
             // 
             // Form4
             // 
