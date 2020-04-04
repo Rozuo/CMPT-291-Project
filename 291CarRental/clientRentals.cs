@@ -72,7 +72,15 @@ namespace _291CarRental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            reservationData.Rows.Remove(row);
+            try
+            {
+                reservationData.Rows.Remove(row);
+            }
+            catch(Exception e3)
+            {
+                MessageBox.Show(e3);
+            }
+                
         }
 
         private void reservationData_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -68,5 +68,6 @@ C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\2
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.exe
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.pdb
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.RemoveRow.resources
-C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.CopyComplete
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\Car_Renting_Software.CarRentalPageCustomer.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\Car_Renting_Software.CarRentalPageCustomer.resources
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.clientRentals.resources
