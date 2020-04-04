@@ -58,16 +58,19 @@ namespace Car_Renting_Software
                 MessageBox.Show("This car is taken or is under repairs. Select another one.");
                 return;
             }
+            datab.myCommand.CommandText = "SELECT role from Users where Users.username = @uname";
+            datab.myCommand.Parameters.AddWithValue("uname",datab.usr);
+            String role = datab.myCommand.ExecuteScalar().ToString();
+            datab.myCommand.Parameters.Clear();
             WindowsFormsApp1.Reservation reserve = new WindowsFormsApp1.Reservation(datab, dataString);
             reserve.ShowDialog();
 
             try
             {
-                if(reserve.username == null)
+                if (reserve.username == null)
                 {
                     return;
                 }
-            
                 cmd = "update Car set Status = @status, UserID = @userID where Car.VehicleID = @carID";
                 datab.myCommand.Parameters.AddWithValue("status", "1");
                 datab.myCommand.Parameters.AddWithValue("carID",  dataString[0]);
@@ -80,6 +83,7 @@ namespace Car_Renting_Software
             {
                 MessageBox.Show(e3.ToString());
             }
+            
             Close();
         }
 
@@ -354,6 +358,21 @@ namespace Car_Renting_Software
                     }
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CarData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CarInfoBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

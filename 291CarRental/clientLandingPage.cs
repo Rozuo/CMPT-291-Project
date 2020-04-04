@@ -37,7 +37,7 @@ namespace _291CarRental
 
         private void checkCarButton_Click(object sender, EventArgs e)
         {
-            Car_Renting_Software.Form4 car = new Car_Renting_Software.Form4(datab);
+            Car_Renting_Software.CarRentalPageCustomer car = new Car_Renting_Software.CarRentalPageCustomer(datab);
             car.ShowDialog();
             
         }

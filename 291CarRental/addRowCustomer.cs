@@ -17,11 +17,14 @@ namespace WindowsFormsApp1
         private Guid CarID;
         private ReservationCustomer theOpenResForm;
         /*remember to change back the database into _291GroupProject.database*/
-        public addRowCustomer(_291CarRental.database data, Guid customerID, Guid CarID, ReservationCustomer theOpenResForm)
+        public addRowCustomer(_291CarRental.database data, Guid CarID, ReservationCustomer theOpenResForm)
         {
             InitializeComponent();
             this.data = data;
-            this.customerID = customerID;
+            data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@uname";
+            data.myCommand.Parameters.AddWithValue("uname", data.usr);
+
+            this.customerID = Guid.Parse(data.myCommand.ExecuteScalar().ToString());
             this.CarID = CarID;
             this.theOpenResForm = theOpenResForm;
         }
@@ -34,11 +37,11 @@ namespace WindowsFormsApp1
         private void confirmB_Click_1(object sender, EventArgs e)
         {
             /*add the information to the row*/
-            data = new _291CarRental.database();
+            //data = new database();
             /*search for the userID*/
 
-            try
-            {
+            //try
+            //{
                 Guid guidLocation;
                 data.myCommand.CommandText = "SELECT BranchID from Branch where Branch.Location =@location";
                 data.myCommand.Parameters.AddWithValue("location", locationB.SelectedItem);
@@ -73,11 +76,11 @@ namespace WindowsFormsApp1
                 data.myCommand.Parameters.AddWithValue("Vehicle", CarID);
                 data.myCommand.ExecuteNonQuery();
                 data.myCommand.Parameters.Clear();
-            }
-            catch
-            {
-                MessageBox.Show("Please choose a city");
-            }
+            //}
+            //catch
+            //{
+               // MessageBox.Show("Please choose a city");
+            //}
             theOpenResForm.updateTable();
             this.Close();
         }

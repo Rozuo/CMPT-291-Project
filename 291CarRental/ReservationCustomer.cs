@@ -14,10 +14,15 @@ namespace WindowsFormsApp1
     public partial class ReservationCustomer : Form
     {
         public _291CarRental.database data;
-        public ReservationCustomer(_291CarRental.database data)
+        public string username;
+        public string[] dataString;
+        public Guid carID;
+        public ReservationCustomer(_291CarRental.database data, string[] dataString)
         {
             InitializeComponent();
             this.data = data;
+            this.dataString = dataString;
+            carID = Guid.Parse(dataString[0]);
         }
 
         private void ReservationCustomer_Load(object sender, EventArgs e)
@@ -31,20 +36,7 @@ namespace WindowsFormsApp1
             Guid userID = Guid.Parse(data.myCommand.ExecuteScalar().ToString());
             //String userID = data.myCommand.ExecuteScalar().ToString();
             data.myCommand.Parameters.Clear();
-            //MessageBox.Show(userID);
-            /*
-            data.myCommand.Parameters.Clear();
-            int rowsnum = _291GroupProjectDataSet.Reservation.Count();
-            int columnIndex = _291GroupProjectDataSet.Reservation.UserIDColumn.Ordinal;
-            this.reservationTableAdapter.Fill(this._291GroupProjectDataSet.Reservation);
-            MessageBox.Show(_291GroupProjectDataSet.Reservation.Rows[0].ItemArray[columnIndex].ToString());
-            MessageBox.Show(dataGridView1.Rows[0].Cells[6].Value.ToString());
-            for (int i = 0; i < rowsnum; i++) {
-                if (_291GroupProjectDataSet.Reservation.Rows[i].ItemArray[columnIndex].ToString() == userID) {
-                    
-                    dataGridView1.Rows.Add(_291GroupProjectDataSet.Reservation.Rows[i]);
-                }
-            }*/
+
             data.myCommand.CommandText = "SELECT * FROM Reservation where Reservation.UserID =@user";
             data.myCommand.Parameters.AddWithValue("user",userID);
             data.query(data.myCommand.CommandText);
@@ -60,20 +52,9 @@ namespace WindowsFormsApp1
                      data.myReader["UserID"].ToString());
 
             }
-            //SqlDataReader customerRev = data.myCommand.ExecuteReader();
-            //reservationTableAdapter.Fill(_291GroupProjectDataSet.Reservation);
-            //reservationTableAdapter.Fill(customerRev);
-            /*
-            using (data.myConnection) {
-                SqlDataAdapter customerAdaptor1 = new SqlDataAdapter(data.myCommand.CommandText, data.myConnection);
-                DataSet customerRes = new DataSet("customerReserve");
-                customerRes.Tables.Add("Reservation");
-                reservationTableAdapter.Fill(customerRes);
-            }*/
+
             data.myCommand.Parameters.Clear();
             data.myReader.Close();
-            //MessageBox.Show(_291GroupProjectDataSet.Reservation.UserIDColumn.Ordinal.ToString());
-            //MessageBox.Show(_291GroupProjectDataSet.Reservation.Rows[0].ItemArray[6].ToString());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -171,12 +152,12 @@ namespace WindowsFormsApp1
             data.myCommand.Parameters.AddWithValue("Model", "F-150");
             tempCar = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
-            Guid tempUser;
-            data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
-            data.myCommand.Parameters.AddWithValue("user", "AmyBillid");
-            tempUser = (Guid)data.myCommand.ExecuteScalar();
+            //Guid tempUser;
+            //data.myCommand.CommandText = "SELECT UserID from Users where Users.username =@user";
+            //data.myCommand.Parameters.AddWithValue("user", "AmyBillid");
+            //tempUser = (Guid)data.myCommand.ExecuteScalar();
             data.myCommand.Parameters.Clear();
-            addRowCustomer addrow = new addRowCustomer(data, tempUser, tempCar, this);
+            addRowCustomer addrow = new addRowCustomer(data, carID, this);
             addrow.ShowDialog();
         }
     }
