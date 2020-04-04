@@ -73,8 +73,8 @@ namespace Car_Renting_Software
                 }
                 cmd = "update Car set Status = @status, UserID = @userID where Car.VehicleID = @carID";
                 datab.myCommand.Parameters.AddWithValue("status", "1");
-                datab.myCommand.Parameters.AddWithValue("carID", dataString[0]);
-                datab.myCommand.Parameters.AddWithValue("userID", reserve.username);
+                datab.myCommand.Parameters.AddWithValue("carID",  dataString[0]);
+                datab.myCommand.Parameters.AddWithValue("userID", new Guid(reserve.username));
                 datab.update(cmd);
                 datab.clearParameters();
                 this.carTableAdapter.Fill(this._291GroupProjectDataSetCar.Car);

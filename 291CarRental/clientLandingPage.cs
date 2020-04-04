@@ -44,8 +44,12 @@ namespace _291CarRental
 
         private void currentRentalButton_Click(object sender, EventArgs e)
         {
+            clientRentals rents = new clientRentals(datab);
+            rents.ShowDialog();
+            /*
             currentRentals currRent = new currentRentals(datab);
             currRent.ShowDialog();
+            */
         }
     }
 }

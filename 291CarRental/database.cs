@@ -33,7 +33,7 @@ namespace _291CarRental
             /*
              * Change the myConnection line to include whatever data connection string works with your own local database
              */
-            SqlConnection myConnection = new SqlConnection(@"Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True");
+            SqlConnection myConnection = new SqlConnection(@"Data Source=X-MK1;Initial Catalog = 291GroupProject;Integrated Security = True");
             myConnection.Open();    // opens the connection
             usr = username;
             myCommand = new SqlCommand();
