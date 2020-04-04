@@ -35,9 +35,9 @@
             this._291GroupProjectDataSet = new WindowsFormsApp1._291GroupProjectDataSet();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservationTableAdapter = new WindowsFormsApp1._291GroupProjectDataSetTableAdapters.ReservationTableAdapter();
-            this._291GroupProjectDataSet1 = new WindowsFormsApp1._291GroupProjectDataSet1();
+            this._291GroupProjectDataSet1 = new _291CarRental._291GroupProjectDataSet1();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carTableAdapter = new _291GroupProjectDataSet1TableAdapters.CarTableAdapter();
+            this.carTableAdapter = new _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter();
             this.locationB = new System.Windows.Forms.ComboBox();
             this.branchL = new System.Windows.Forms.Label();
             this.endTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -266,9 +266,9 @@
         private _291GroupProjectDataSet _291GroupProjectDataSet;
         private System.Windows.Forms.BindingSource reservationBindingSource;
         private _291GroupProjectDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private _291GroupProjectDataSet1 _291GroupProjectDataSet1;
+        private _291CarRental._291GroupProjectDataSet1 _291GroupProjectDataSet1;
         private System.Windows.Forms.BindingSource carBindingSource;
-        private _291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
+        private _291CarRental._291GroupProjectDataSet1TableAdapters.CarTableAdapter carTableAdapter;
         private System.Windows.Forms.BindingSource carBindingSource1;
         private System.Windows.Forms.ComboBox locationB;
         private System.Windows.Forms.Label branchL;

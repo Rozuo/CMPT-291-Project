@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class RemoveRowCustomer : Form
     {
-        private database data = new database();
+        private _291CarRental.database data = new _291CarRental.database();
         private ReservationCustomer reference;
         public RemoveRowCustomer(ReservationCustomer reservation)
         {

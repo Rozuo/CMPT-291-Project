@@ -12,12 +12,12 @@ namespace WindowsFormsApp1
 {
     public partial class addRowCustomer : Form
     {
-        private database data;
+        private _291CarRental.database data;
         private Guid customerID;
         private Guid CarID;
         private ReservationCustomer theOpenResForm;
         /*remember to change back the database into _291GroupProject.database*/
-        public addRowCustomer(database data, Guid customerID, Guid CarID, ReservationCustomer theOpenResForm)
+        public addRowCustomer(_291CarRental.database data, Guid customerID, Guid CarID, ReservationCustomer theOpenResForm)
         {
             InitializeComponent();
             this.data = data;
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         private void confirmB_Click_1(object sender, EventArgs e)
         {
             /*add the information to the row*/
-            data = new database();
+            data = new _291CarRental.database();
             /*search for the userID*/
 
             try

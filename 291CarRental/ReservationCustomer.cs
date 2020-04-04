@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class ReservationCustomer : Form
     {
-        public database data;
-        public ReservationCustomer(database data)
+        public _291CarRental.database data;
+        public ReservationCustomer(_291CarRental.database data)
         {
             InitializeComponent();
             this.data = data;

@@ -79,6 +79,12 @@
     <Compile Include="AdminLandingPage.Designer.cs">
       <DependentUpon>AdminLandingPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="clientRentals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clientRentals.Designer.cs">
+      <DependentUpon>clientRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="currentRentals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     <EmbeddedResource Include="CarRentalPage.resx">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="clientRentals.resx">
+      <DependentUpon>clientRentals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="currentRentals.resx">
       <DependentUpon>currentRentals.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,16 +304,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Car Renting Software\Car Renting Software\Car Renting Software.csproj">
-      <Project>{0230c685-1d6a-4785-bf15-920492e84903}</Project>
-      <Name>Car Renting Software</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1.csproj">
-      <Project>{15c51af2-4382-43af-bb68-d19c308fc61d}</Project>
-      <Name>WindowsFormsApp1</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -67,11 +67,5 @@ C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\2
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.CopyComplete
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.exe
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.pdb
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.exe
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.exe
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.pdb
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.exe.config
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.pdb
-C:\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.exe.config
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.RemoveRow.resources
-C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.CopyComplete
+C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.clientRentals.resources
