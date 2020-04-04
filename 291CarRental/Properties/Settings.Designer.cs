@@ -26,7 +26,7 @@ namespace _291CarRental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=T" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=T" +
             "rue")]
         public string _291GroupProjectDataSet {
             get {
@@ -37,7 +37,7 @@ namespace _291CarRental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=T" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=T" +
             "rue")]
         public string _291GroupProjectConnectionString1 {
             get {

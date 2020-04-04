@@ -8,7 +8,7 @@
   &lt;ConnectionString&gt;Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True</Value>
     </Setting>
     <Setting Name="_291GroupProjectConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -16,7 +16,7 @@
   &lt;ConnectionString&gt;Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-9JM8HEJ;Initial Catalog=291GroupProject;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True</Value>
     </Setting>
     <Setting Name="_291GroupProjectConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -24,7 +24,7 @@
   &lt;ConnectionString&gt;Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=X-MK1;Initial Catalog=291GroupProject;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-I3IEL2R;Initial Catalog=291GroupProject;Integrated Security=True</Value>
     </Setting>
     <Setting Name="_291GroupProjectDataSet1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

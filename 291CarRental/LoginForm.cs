@@ -58,11 +58,12 @@ namespace _291CarRental
                 {
                     switch (dt.Rows[0]["role"] as string)
                     {
-                        /*
-                         * This switch statement controls which forms are shown to the user depending on whether their role in the database is a "Client" or an "Admin". There is a default
-                         * case included just in case an unexpected role is encountered.
-                         */
-                        case "admin":
+                    /*
+                     * This switch statement controls which forms are shown to the user depending on whether their role in the database is a "Client" or an "Admin". There is a default
+                     * case included just in case an unexpected role is encountered.
+                     */
+                        case ("Admin"):
+                        case ("admin") :
                             {
                                 /*
                                  * Admin form flow handled here
@@ -74,8 +75,8 @@ namespace _291CarRental
                                 Application.Exit();
                                 break;
                             }
-
-                        case "client":
+                        case ("client"):
+                        case "Client":
                             {
                                 /*
                                  * Client form flow handled here

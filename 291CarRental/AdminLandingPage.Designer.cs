@@ -34,6 +34,7 @@
             this.processReturnsButton = new System.Windows.Forms.Button();
             this.reportButtons = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.addVehicleButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             this.processRentalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.processRentalButton.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processRentalButton.Location = new System.Drawing.Point(188, 114);
+            this.processRentalButton.Location = new System.Drawing.Point(188, 105);
             this.processRentalButton.Name = "processRentalButton";
             this.processRentalButton.Size = new System.Drawing.Size(429, 44);
             this.processRentalButton.TabIndex = 1;
@@ -76,7 +77,7 @@
             // 
             this.processReturnsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.processReturnsButton.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processReturnsButton.Location = new System.Drawing.Point(188, 191);
+            this.processReturnsButton.Location = new System.Drawing.Point(188, 176);
             this.processReturnsButton.Name = "processReturnsButton";
             this.processReturnsButton.Size = new System.Drawing.Size(429, 44);
             this.processReturnsButton.TabIndex = 2;
@@ -88,7 +89,7 @@
             // 
             this.reportButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.reportButtons.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportButtons.Location = new System.Drawing.Point(188, 267);
+            this.reportButtons.Location = new System.Drawing.Point(188, 241);
             this.reportButtons.Name = "reportButtons";
             this.reportButtons.Size = new System.Drawing.Size(429, 44);
             this.reportButtons.TabIndex = 3;
@@ -100,7 +101,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Brown;
             this.ExitButton.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(188, 344);
+            this.ExitButton.Location = new System.Drawing.Point(188, 383);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(429, 44);
             this.ExitButton.TabIndex = 4;
@@ -108,12 +109,25 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // addVehicleButton
+            // 
+            this.addVehicleButton.BackColor = System.Drawing.Color.Gold;
+            this.addVehicleButton.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addVehicleButton.Location = new System.Drawing.Point(188, 306);
+            this.addVehicleButton.Name = "addVehicleButton";
+            this.addVehicleButton.Size = new System.Drawing.Size(429, 44);
+            this.addVehicleButton.TabIndex = 5;
+            this.addVehicleButton.Text = "Add Vehicle";
+            this.addVehicleButton.UseVisualStyleBackColor = false;
+            this.addVehicleButton.Click += new System.EventHandler(this.addVehicleButton_Click);
+            // 
             // AdminLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addVehicleButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.reportButtons);
             this.Controls.Add(this.processReturnsButton);
@@ -135,5 +149,6 @@
         private System.Windows.Forms.Button processReturnsButton;
         private System.Windows.Forms.Button reportButtons;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button addVehicleButton;
     }
 }

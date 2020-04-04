@@ -71,3 +71,20 @@ C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.RemoveRow.resour
 C:\Users\timothy kwan\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\Car_Renting_Software.CarRentalPageCustomer.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\Car_Renting_Software.CarRentalPageCustomer.resources
 C:\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.clientRentals.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\Car Renting Software.exe.config
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.addRow.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.AdminLandingPage.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\Car_Renting_Software.Form4.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.currentRentals.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.ProcessReturns.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.RemoveRow.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Report.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\WindowsFormsApp1.Reservation.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\291CarRental.csproj.CopyComplete
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.addVehicle.resources
+C:\Users\Alex\Documents\GitHub\CMPT-291-Project\291CarRental\obj\Debug\_291CarRental.Form1.resources

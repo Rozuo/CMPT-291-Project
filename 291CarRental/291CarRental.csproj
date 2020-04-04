@@ -91,6 +91,7 @@
     <Compile Include="clientRentals.Designer.cs">
       <DependentUpon>clientRentals.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarModels.cs" />
     <Compile Include="currentRentals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +110,18 @@
     </Compile>
     <Compile Include="CarRentalPage.Designer.cs">
       <DependentUpon>CarRentalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addVehicle.Designer.cs">
+      <DependentUpon>addVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessReturns.cs">
       <SubType>Form</SubType>
@@ -192,6 +205,9 @@
     <EmbeddedResource Include="addRow.resx">
       <DependentUpon>addRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addVehicle.resx">
+      <DependentUpon>addVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLandingPage.resx">
       <DependentUpon>AdminLandingPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="currentRentals.resx">
       <DependentUpon>currentRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
