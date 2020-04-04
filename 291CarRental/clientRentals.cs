@@ -78,7 +78,7 @@ namespace _291CarRental
             }
             catch(Exception e3)
             {
-                MessageBox.Show(e3);
+                MessageBox.Show(e3.ToString());
             }
                 
         }
